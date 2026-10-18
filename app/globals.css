@@ -7,6 +7,12 @@
   --color-navy-800: #22396f;
   --color-cream: #fcf1d0;
   --color-cream-deep: #e8d9a8;
+
+  --radius-card: 1.75rem;
+  --radius-tile: 1.5rem;
+
+  --shadow-glow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow-cream: 0 0 30px rgba(252, 241, 208, 0.08), 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
@@ -47,6 +53,12 @@
   background: rgba(8, 16, 38, 0.55);
   backdrop-filter: blur(24px) saturate(140%);
   border: 1px solid rgba(252, 241, 208, 0.08);
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, #fcf1d0 0%, #fcf1d0 50%, rgb(252 241 208 / 0.4) 100%);
+  background-clip: text;
+  color: transparent;
 }
 
 ::selection {
