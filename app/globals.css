@@ -34,21 +34,18 @@
 @utility glass {
   background: rgba(10, 18, 40, 0.5);
   backdrop-filter: blur(20px) saturate(130%);
-  -webkit-backdrop-filter: blur(20px) saturate(130%);
   border: 1px solid rgba(252, 241, 208, 0.08);
 }
 
 @utility glass-strong {
   background: rgba(10, 18, 40, 0.7);
   backdrop-filter: blur(28px) saturate(150%);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
   border: 1px solid rgba(252, 241, 208, 0.1);
 }
 
 @utility glass-pill {
   background: rgba(8, 16, 38, 0.55);
   backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
   border: 1px solid rgba(252, 241, 208, 0.08);
 }
 
