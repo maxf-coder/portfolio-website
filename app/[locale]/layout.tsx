@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { MotionProvider } from "@/components/motion-provider";
+import { BackgroundProvider } from "@/components/background-provider";
 import "../globals.css";
 
 const inter = Inter({
@@ -30,7 +31,9 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   return (
     <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <MotionProvider>{children}</MotionProvider>
+        <BackgroundProvider>
+          <MotionProvider>{children}</MotionProvider>
+        </BackgroundProvider>
       </body>
     </html>
   );

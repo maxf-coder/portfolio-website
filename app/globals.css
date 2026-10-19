@@ -61,6 +61,19 @@
   color: transparent;
 }
 
+@utility aurora-static {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgb(13 28 66 / 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 100% 100%, rgb(34 57 111 / 0.1) 0%, transparent 50%);
+}
+
+@utility particles-static {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgb(13 28 66 / 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 100% 100%, rgb(34 57 111 / 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 0% 70%, rgb(13 28 66 / 0.3) 0%, transparent 50%);
+}
+
 ::selection {
   background: rgba(252, 241, 208, 0.2);
   color: var(--color-cream);
