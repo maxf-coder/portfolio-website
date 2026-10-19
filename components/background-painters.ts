@@ -158,98 +158,182 @@ export function createAurora(): Painter {
   return { opaque: true, resize, paint, onPointerDown };
 }
 
-type Particle = {
+type Star = {
   x: number;
   y: number;
   vx: number;
   vy: number;
   radius: number;
-  alpha: number;
+  baseAlpha: number;
   pulse: number;
   pulseSpeed: number;
+  hue: number;
+  depth: number;
+  trailX: number[];
+  trailY: number[];
 };
 
-const PARTICLE_COUNT = 45;
-const LINK_DISTANCE = 130;
+type ParticleRipple = { x: number; y: number; radius: number; alpha: number };
+
+const TRAIL_LENGTH = 5;
+const LINK_DISTANCE = 120;
 const CURSOR_DISTANCE = 160;
-const PUSH_DISTANCE = 120;
+const PUSH_DISTANCE = 130;
+const MAX_STARS = 60;
+const AREA_PER_STAR = 16000;
+const STAR_HUES = [45, 210, 200, 50, 190];
 
 export function createParticles(): Painter {
   let width = 0;
   let height = 0;
-  let particles: Particle[] = [];
+  let stars: Star[] = [];
+  let ripples: ParticleRipple[] = [];
 
   const resize = (nextWidth: number, nextHeight: number) => {
-    if (nextWidth === width && nextHeight === height && particles.length > 0) return;
+    if (nextWidth === width && nextHeight === height && stars.length > 0) return;
     width = nextWidth;
     height = nextHeight;
+    ripples = [];
 
-    particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 15,
-      vy: (Math.random() - 0.5) * 15,
-      radius: Math.random() * 1.6 + 0.4,
-      alpha: Math.random() * 0.4 + 0.15,
-      pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.2 + Math.random() * 0.6,
-    }));
+    const count = Math.min(Math.floor((width * height) / AREA_PER_STAR), MAX_STARS);
+
+    stars = Array.from({ length: count }, () => {
+      const depth = Math.random();
+      const speed = (0.15 + depth * 0.3) * 60;
+
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * speed,
+        vy: (Math.random() - 0.5) * speed,
+        radius: 0.3 + depth * 2.2,
+        baseAlpha: 0.1 + depth * 0.5,
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.003 + Math.random() * 0.012,
+        hue: STAR_HUES[Math.floor(Math.random() * STAR_HUES.length)],
+        depth,
+        trailX: [],
+        trailY: [],
+      };
+    });
+  };
+
+  const onPointerDown = (x: number, y: number) => {
+    ripples.push({ x, y, radius: 0, alpha: 0.12 });
   };
 
   const paint = (ctx: CanvasRenderingContext2D, dt: number, pointer: Pointer) => {
-    const seconds = dt / 1000;
+    const seconds = Math.min(dt, 50) / 1000;
+    const step = seconds * 60;
 
-    for (const particle of particles) {
-      particle.x += particle.vx * seconds;
-      particle.y += particle.vy * seconds;
-      particle.pulse += particle.pulseSpeed * seconds;
-
-      if (particle.x < -10) particle.x = width + 10;
-      if (particle.x > width + 10) particle.x = -10;
-      if (particle.y < -10) particle.y = height + 10;
-      if (particle.y > height + 10) particle.y = -10;
+    for (const star of stars) {
+      star.pulse += star.pulseSpeed * step;
 
       if (pointer.active) {
-        const dx = particle.x - pointer.x;
-        const dy = particle.y - pointer.y;
+        const dx = star.x - pointer.x;
+        const dy = star.y - pointer.y;
         const distance = Math.hypot(dx, dy);
 
-        if (distance < PUSH_DISTANCE && distance > 0) {
-          const push = ((PUSH_DISTANCE - distance) / PUSH_DISTANCE) * 90 * seconds;
-          particle.x += (dx / distance) * push;
-          particle.y += (dy / distance) * push;
+        if (distance < PUSH_DISTANCE && distance > 0.1) {
+          const force = (PUSH_DISTANCE - distance) / PUSH_DISTANCE;
+          star.x += (dx / distance) * force * 1.8 * (0.5 + star.depth) * step;
+          star.y += (dy / distance) * force * 1.8 * (0.5 + star.depth) * step;
         }
       }
 
-      const alpha = Math.max(0, particle.alpha + Math.sin(particle.pulse) * 0.15);
+      star.x += star.vx * seconds;
+      star.y += star.vy * seconds;
+
+      if (star.x < -15) star.x = width + 15;
+      if (star.x > width + 15) star.x = -15;
+      if (star.y < -15) star.y = height + 15;
+      if (star.y > height + 15) star.y = -15;
+
+      if (star.depth > 0.55) {
+        star.trailX.push(star.x);
+        star.trailY.push(star.y);
+
+        if (star.trailX.length > TRAIL_LENGTH) {
+          star.trailX.shift();
+          star.trailY.shift();
+        }
+
+        ctx.lineWidth = star.radius * 0.6;
+        for (let t = 0; t < star.trailX.length - 1; t++) {
+          const alpha = (t / star.trailX.length) * star.baseAlpha * 0.4;
+          ctx.beginPath();
+          ctx.moveTo(star.trailX[t], star.trailY[t]);
+          ctx.lineTo(star.trailX[t + 1], star.trailY[t + 1]);
+          ctx.strokeStyle = `hsla(${star.hue}, 70%, 65%, ${alpha})`;
+          ctx.stroke();
+        }
+      } else {
+        star.trailX.length = 0;
+        star.trailY.length = 0;
+      }
+
+      const alpha = Math.max(0, star.baseAlpha + Math.sin(star.pulse) * 0.25);
+
+      if (star.depth > 0.4) {
+        const glowRadius = star.radius * 3.5;
+        const glow = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, glowRadius);
+        glow.addColorStop(0, `hsla(${star.hue}, 75%, 70%, ${alpha * 0.6})`);
+        glow.addColorStop(1, `hsla(${star.hue}, 70%, 50%, 0)`);
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, glowRadius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
       ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${CREAM}, ${alpha})`;
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${star.hue}, 80%, 75%, ${alpha})`;
       ctx.fill();
+    }
+
+    const cols = Math.ceil(width / LINK_DISTANCE) + 1;
+    const rows = Math.ceil(height / LINK_DISTANCE) + 1;
+    const grid: Star[][] = new Array(cols * rows);
+
+    for (const star of stars) {
+      const index = Math.floor(star.y / LINK_DISTANCE) * cols + Math.floor(star.x / LINK_DISTANCE);
+      (grid[index] ??= []).push(star);
     }
 
     ctx.lineWidth = 0.5;
 
-    for (let i = 0; i < particles.length; i++) {
-      const a = particles[i];
+    for (const a of stars) {
+      const cellX = Math.floor(a.x / LINK_DISTANCE);
+      const cellY = Math.floor(a.y / LINK_DISTANCE);
 
-      for (let j = i + 1; j < particles.length; j++) {
-        const b = particles[j];
-        const distance = Math.hypot(a.x - b.x, a.y - b.y);
-        if (distance > LINK_DISTANCE) continue;
+      for (let dx = 0; dx <= 1; dx++) {
+        for (let dy = -1; dy <= 1; dy++) {
+          if (dx === 0 && dy < 0) continue;
 
-        ctx.strokeStyle = `rgba(${CREAM}, ${(1 - distance / LINK_DISTANCE) * 0.12})`;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
+          const cell = grid[(cellY + dy) * cols + (cellX + dx)];
+          if (!cell) continue;
+
+          for (const b of cell) {
+            if (b === a) continue;
+
+            const distance = Math.hypot(a.x - b.x, a.y - b.y);
+            if (distance >= LINK_DISTANCE) continue;
+
+            const alpha = (1 - distance / LINK_DISTANCE) * 0.1 * Math.min(a.depth + b.depth, 1);
+            ctx.strokeStyle = `hsla(${(a.hue + b.hue) / 2}, 65%, 60%, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
       }
 
       if (pointer.active) {
         const toCursor = Math.hypot(a.x - pointer.x, a.y - pointer.y);
 
         if (toCursor < CURSOR_DISTANCE) {
-          ctx.strokeStyle = `rgba(${CREAM}, ${(1 - toCursor / CURSOR_DISTANCE) * 0.2})`;
+          ctx.strokeStyle = `hsla(${a.hue}, 75%, 65%, ${(1 - toCursor / CURSOR_DISTANCE) * 0.2})`;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(pointer.x, pointer.y);
@@ -257,9 +341,33 @@ export function createParticles(): Painter {
         }
       }
     }
+
+    ripples = ripples.filter((ripple) => ripple.alpha > 0.005);
+
+    for (const ripple of ripples) {
+      ripple.radius += 3 * step;
+      ripple.alpha *= Math.pow(0.95, step);
+
+      const glow = ctx.createRadialGradient(
+        ripple.x,
+        ripple.y,
+        ripple.radius * 0.65,
+        ripple.x,
+        ripple.y,
+        ripple.radius,
+      );
+      glow.addColorStop(0, "rgba(252, 241, 208, 0)");
+      glow.addColorStop(0.8, `rgba(252, 241, 208, ${ripple.alpha})`);
+      glow.addColorStop(1, "rgba(252, 241, 208, 0)");
+
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
   };
 
-  return { opaque: false, resize, paint };
+  return { opaque: false, resize, paint, onPointerDown };
 }
 
 let auroraPainter: Painter | null = null;
