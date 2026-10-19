@@ -17,3 +17,7 @@ export const viewCard = { once: true, margin: "-50px" };
 export const viewOnce = { once: true };
 
 export const navIndicator = { type: "spring", stiffness: 400, damping: 30 } as const;
+export const navPanel = { duration: 0.25, ease: [0.22, 1, 0.36, 1] } as const;
+export const navItem = { duration: 0.3, ease: [0.22, 1, 0.36, 1] } as const;
+export const navItemStart = 0.15;
+export const navItemStep = 0.07;

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useBackground } from "./background-provider";
 import { NavPill } from "./nav-pill";
+import { MobileNav } from "./mobile-nav";
 import { Logo } from "./logo";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
 
@@ -30,7 +31,10 @@ export function SiteHeader() {
 
         <NavPill activeSection={activeSection} />
 
-        <div className="justify-self-end">{/* language toggle lands here */}</div>
+        <div className="col-start-3 flex items-center gap-2 justify-self-end">
+          {/* language toggle lands here next sitting */}
+          <MobileNav activeSection={activeSection} />
+        </div>
       </div>
     </header>
   );
