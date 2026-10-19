@@ -17,6 +17,7 @@
     "contact": "Contact",
     "logoLabel": "Switch background and return to the top",
     "navLabel": "Sections",
-    "menu": "Menu"
+  "languageLabel": "Language",
+  "menu": "Menu"
   }
 }

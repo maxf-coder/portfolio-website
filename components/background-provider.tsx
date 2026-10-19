@@ -10,6 +10,12 @@ type BackgroundValue = {
   toggle: () => void;
 };
 
+let lastVariant: BackgroundVariant = "aurora";
+
+function rememberVariant(next: BackgroundVariant) {
+  lastVariant = next;
+}
+
 const BackgroundContext = createContext<BackgroundValue | null>(null);
 
 export function useBackground() {
@@ -19,10 +25,12 @@ export function useBackground() {
 }
 
 export function BackgroundProvider({ children }: { children: ReactNode }) {
-  const [variant, setVariant] = useState<BackgroundVariant>("aurora");
+  const [variant, setVariant] = useState<BackgroundVariant>(lastVariant);
 
   const toggle = () => {
-    setVariant((current) => (current === "aurora" ? "particles" : "aurora"));
+    const next = variant === "aurora" ? "particles" : "aurora";
+    rememberVariant(next);
+    setVariant(next);
   };
 
   return (

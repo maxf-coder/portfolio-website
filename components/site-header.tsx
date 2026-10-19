@@ -10,6 +10,7 @@ import { Logo } from "./logo";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
 import { useHeaderHide } from "@/hooks/use-header-hide";
 import { headerHide } from "@/lib/motion";
+import { LanguageToggle } from "./language-toggle";
 
 export function SiteHeader() {
   const t = useTranslations("Navigation");
@@ -44,7 +45,7 @@ export function SiteHeader() {
           <NavPill activeSection={activeSection} />
 
           <div className="col-start-3 flex items-center gap-2 justify-self-end">
-            {/* language toggle lands here next sitting */}
+            <LanguageToggle />
             <button
               id="mobile-nav-trigger"
               type="button"

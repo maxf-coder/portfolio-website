@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Pointer, Painter } from "./background-painters";
-import { createAurora, createParticles } from "./background-painters";
+import { createAurora, createParticles, getPainter } from "./background-painters";
 
 
 export function BackgroundCanvas({ variant }: { variant: "aurora" | "particles" }) {
@@ -12,13 +12,13 @@ export function BackgroundCanvas({ variant }: { variant: "aurora" | "particles" 
   const pointerRef = useRef<Pointer>({ x: 0, y: 0, active: false });
 
   useEffect(() => {
-    const painter = variant === "particles" ? createParticles() : createAurora();
+    const painter = getPainter(variant);
     painterRef.current = painter;
 
     const { width, height } = sizeRef.current;
     if (width && height) painter.resize(width, height);
   }, [variant]);
-
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;

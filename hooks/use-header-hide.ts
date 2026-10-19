@@ -63,12 +63,10 @@ export function useHeaderHide(suspended = false) {
     window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("pointerdown", markLinkScroll, { passive: true });
     document.addEventListener("click", markLinkScroll);
-    document.addEventListener("click", markLinkScroll);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("pointerdown", markLinkScroll);
-      document.removeEventListener("click", markLinkScroll);
       document.removeEventListener("click", markLinkScroll);
     };
   }, [suspended]);

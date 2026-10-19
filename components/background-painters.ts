@@ -41,6 +41,7 @@ export function createAurora(): Painter {
   let mouseY = -1;
 
   const resize = (nextWidth: number, nextHeight: number) => {
+    if (nextWidth === width && nextHeight === height && orbs.length > 0) return;
     width = nextWidth;
     height = nextHeight;
 
@@ -179,6 +180,7 @@ export function createParticles(): Painter {
   let particles: Particle[] = [];
 
   const resize = (nextWidth: number, nextHeight: number) => {
+    if (nextWidth === width && nextHeight === height && particles.length > 0) return;
     width = nextWidth;
     height = nextHeight;
 
@@ -258,4 +260,17 @@ export function createParticles(): Painter {
   };
 
   return { opaque: false, resize, paint };
+}
+
+let auroraPainter: Painter | null = null;
+let particlesPainter: Painter | null = null;
+
+export function getPainter(variant: "aurora" | "particles"): Painter {
+  if (variant === "particles") {
+    particlesPainter ??= createParticles();
+    return particlesPainter;
+  }
+
+  auroraPainter ??= createAurora();
+  return auroraPainter;
 }
