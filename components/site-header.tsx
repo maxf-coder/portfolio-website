@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { m } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useBackground } from "./background-provider";
+import { useBackground, type BackgroundVariant } from "./background-provider";
 import { NavPill } from "./nav-pill";
 import { MobileNav } from "./mobile-nav";
 import { Logo } from "./logo";
@@ -12,13 +12,19 @@ import { useHeaderHide } from "@/hooks/use-header-hide";
 import { headerHide } from "@/lib/motion";
 import { LanguageToggle } from "./language-toggle";
 
+const PULSE: Record<BackgroundVariant, string> = {
+  aurora: "rgba(252, 241, 208, 0.9)",
+  particles: "rgba(64, 130, 200, 0.9)",
+};
+
 export function SiteHeader() {
   const t = useTranslations("Navigation");
-  const { toggle } = useBackground();
+  const { toggle, variant } = useBackground();
   const activeSection = useScrollSpy();
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeMobileNav = useCallback(() => setMobileOpen(false), []);
   const hidden = useHeaderHide(mobileOpen);
+  const reduceMotion = useReducedMotion();
 
   return (
     <>
@@ -36,8 +42,16 @@ export function SiteHeader() {
                 window.scrollTo({ top: 0 });
               }}
               aria-label={t("logoLabel")}
-              className="focus-ring glass-pill block rounded-2xl p-1.5 shadow-glow transition-transform duration-300 hover:scale-[1.04] active:scale-95"
+              className="focus-ring glass-pill relative block transform-gpu rounded-2xl p-1.5 shadow-glow transition-transform duration-300 will-change-transform hover:scale-[1.04] active:scale-95"
             >
+              <m.span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-2xl"
+                style={{ boxShadow: `0 0 28px 6px ${PULSE[variant]}` }}
+                initial={{ opacity: 0.15 }}
+                animate={{ opacity: reduceMotion ? 0.6 : [0.15, 1, 0.15] }}
+                transition={reduceMotion ? { duration: 0 } : { duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              />
               <Logo />
             </button>
           </div>

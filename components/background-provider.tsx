@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { BackgroundCanvas } from "./background-canvas";
 
-type BackgroundVariant = "aurora" | "particles";
+export type BackgroundVariant = "aurora" | "particles";
 
 type BackgroundValue = {
   variant: BackgroundVariant;
