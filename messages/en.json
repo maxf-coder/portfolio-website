@@ -9,6 +9,39 @@
     "cta": "Let's build your project",
     "scroll": "Scroll to services"
   },
+  "Services": {
+    "title": "Services",
+    "subtitle": "What I can build for you",
+    "cards": {
+      "web": {
+        "title": "Websites & Web Apps",
+        "desc": "Fast, modern sites and apps that turn visitors into customers.",
+        "facts": [
+          "Responsive design and animations",
+          "Multilingual and SEO-ready",
+          "Deployment and hosting setup"
+        ]
+      },
+      "backend": {
+        "title": "Backend & APIs",
+        "desc": "Reliable systems that run the logic behind your product.",
+        "facts": [
+          "REST APIs, databases, authentication",
+          "Integrations (payments, email, third-party services)",
+          "Data and ML pipelines"
+        ]
+      },
+      "automation": {
+        "title": "Automation & Scraping",
+        "desc": "Save hours by automating repetitive work.",
+        "facts": [
+          "Data collection and monitoring",
+          "Reports, notifications, workflows",
+          "Scheduled jobs and integrations"
+        ]
+      }
+    }
+  },
   "Navigation": {
     "home": "Home",
     "services": "Services",

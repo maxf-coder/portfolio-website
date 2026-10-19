@@ -9,6 +9,39 @@
     "cta": "Hai să construim proiectul tău",
     "scroll": "Derulează la servicii"
   },
+  "Services": {
+    "title": "Servicii",
+    "subtitle": "Ce pot construi pentru tine",
+    "cards": {
+      "web": {
+        "title": "Site-uri și aplicații web",
+        "desc": "Site-uri și aplicații moderne care transformă vizitatorii în clienți.",
+        "facts": [
+          "Design responsiv și animații",
+          "Multilingv și optimizat SEO",
+          "Configurare deployment și hosting"
+        ]
+      },
+      "backend": {
+        "title": "Backend și API-uri",
+        "desc": "Sisteme fiabile care rulează logica din spatele produsului tău.",
+        "facts": [
+          "API-uri REST, baze de date, autentificare",
+          "Integrări (plăți, email, servicii terțe)",
+          "Pipeline-uri de date și ML"
+        ]
+      },
+      "automation": {
+        "title": "Automatizări și scraping",
+        "desc": "Economisește ore automatizând munca repetitivă.",
+        "facts": [
+          "Colectare și monitorizare date",
+          "Rapoarte, notificări, fluxuri de lucru",
+          "Sarcini programate și integrări"
+        ]
+      }
+    }
+  },
   "Navigation": {
     "home": "Acasă",
     "services": "Servicii",
