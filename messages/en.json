@@ -6,7 +6,8 @@
   "Hero": {
     "name": "Maxim Furculiță",
     "role": "Backend & Full-stack Engineer",
-    "tagline": "I design and build backend systems, web applications and automations."
+    "cta": "Let's build your project",
+    "scroll": "Scroll to services"
   },
   "Navigation": {
     "home": "Home",
@@ -17,7 +18,7 @@
     "contact": "Contact",
     "logoLabel": "Switch background and return to the top",
     "navLabel": "Sections",
-  "languageLabel": "Language",
-  "menu": "Menu"
+    "languageLabel": "Language",
+    "menu": "Menu"
   }
 }
