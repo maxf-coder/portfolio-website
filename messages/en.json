@@ -20,5 +20,13 @@
     "navLabel": "Sections",
     "languageLabel": "Language",
     "menu": "Menu"
+  },
+  "Skills": {
+    "groups": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "deployment": "Deployment",
+      "automation": "Scraping & automation"
+    }
   }
 }

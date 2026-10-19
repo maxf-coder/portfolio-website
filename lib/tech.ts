@@ -1,0 +1,50 @@
+import type { IconType } from "react-icons";
+import { TbApi } from "react-icons/tb";
+import {
+  SiCelery,
+  SiDjango,
+  SiDocker,
+  SiFastapi,
+  SiGit,
+  SiGithub,
+  SiJavascript,
+  SiLinux,
+  SiNextdotjs,
+  SiNginx,
+  SiNumpy,
+  SiPandas,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiRedis,
+  SiScrapy,
+  SiSelenium,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
+export const TECH = {
+  python: { label: "Python", Icon: SiPython },
+  django: { label: "Django", Icon: SiDjango },
+  drf: { label: "Django REST Framework", Icon: TbApi },
+  fastapi: { label: "FastAPI", Icon: SiFastapi },
+  postgresql: { label: "PostgreSQL", Icon: SiPostgresql },
+  redis: { label: "Redis", Icon: SiRedis },
+  celery: { label: "Celery", Icon: SiCelery },
+  react: { label: "React", Icon: SiReact },
+  nextjs: { label: "Next.js", Icon: SiNextdotjs },
+  typescript: { label: "TypeScript", Icon: SiTypescript },
+  javascript: { label: "JavaScript", Icon: SiJavascript },
+  tailwind: { label: "Tailwind CSS", Icon: SiTailwindcss },
+  docker: { label: "Docker", Icon: SiDocker },
+  nginx: { label: "Nginx", Icon: SiNginx },
+  linux: { label: "Linux", Icon: SiLinux },
+  git: { label: "Git", Icon: SiGit },
+  github: { label: "GitHub", Icon: SiGithub },
+  scrapy: { label: "Scrapy", Icon: SiScrapy },
+  selenium: { label: "Selenium", Icon: SiSelenium },
+  pandas: { label: "pandas", Icon: SiPandas },
+  numpy: { label: "NumPy", Icon: SiNumpy },
+} satisfies Record<string, { label: string; Icon: IconType }>;
+
+export type TechKey = keyof typeof TECH;

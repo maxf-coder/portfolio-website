@@ -20,5 +20,13 @@
     "navLabel": "Secțiuni",
     "languageLabel": "Limbă",
     "menu": "Meniu"
+  },
+  "Skills": {
+    "groups": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "deployment": "Implementare",
+      "automation": "Scraping și automatizări"
+    }
   }
 }

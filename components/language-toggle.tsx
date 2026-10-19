@@ -7,12 +7,6 @@ import { useScrolled } from "@/hooks/use-scrolled";
 import { navIndicator } from "@/lib/motion";
 
 const LOCALES = ["ro", "en"] as const;
-const ONE_YEAR = 60 * 60 * 24 * 365;
-
-function writeLocaleCookie(locale: (typeof LOCALES)[number]) {
-  const secure = window.location.protocol === "https:" ? "; secure" : "";
-  document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=${ONE_YEAR}; samesite=lax${secure}`;
-}
 
 export function LanguageToggle() {
   const t = useTranslations("Navigation");
