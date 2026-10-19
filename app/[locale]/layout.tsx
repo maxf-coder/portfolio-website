@@ -5,6 +5,8 @@ import { routing } from "@/i18n/routing";
 import { MotionProvider } from "@/components/motion-provider";
 import { BackgroundProvider } from "@/components/background-provider";
 import "../globals.css";
+import { SiteHeader } from "@/components/site-header";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,9 +33,14 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   return (
     <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <BackgroundProvider>
-          <MotionProvider>{children}</MotionProvider>
-        </BackgroundProvider>
+        <NextIntlClientProvider>
+          <BackgroundProvider>
+            <MotionProvider>
+              <SiteHeader />
+              {children}
+              </MotionProvider>
+          </BackgroundProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

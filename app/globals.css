@@ -29,6 +29,10 @@
     background-color: var(--color-page);
     color: var(--color-cream);
   }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,5 +7,14 @@
     "name": "Maxim Furculiță",
     "role": "Dezvoltator Backend & Full-stack",
     "tagline": "Proiectez și construiesc sisteme backend, aplicații web și automatizări."
+  },
+  "Navigation": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "projects": "Proiecte",
+    "skills": "Abilități",
+    "about": "Despre",
+    "contact": "Contact",
+    "logoLabel": "Schimbă fundalul și revino sus"
   }
 }

@@ -7,5 +7,14 @@
     "name": "Maxim Furculiță",
     "role": "Backend & Full-stack Engineer",
     "tagline": "I design and build backend systems, web applications and automations."
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact",
+    "logoLabel": "Switch background and return to the top"
   }
 }
