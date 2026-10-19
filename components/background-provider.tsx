@@ -1,6 +1,11 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 import { BackgroundCanvas } from "./background-canvas";
 
 export type BackgroundVariant = "aurora" | "particles";
@@ -10,10 +15,38 @@ type BackgroundValue = {
   toggle: () => void;
 };
 
-let lastVariant: BackgroundVariant = "aurora";
+const STORAGE_KEY = "portfolio-background";
 
-function rememberVariant(next: BackgroundVariant) {
+let lastVariant: BackgroundVariant = "aurora";
+const listeners = new Set<() => void>();
+
+function readVariant(): BackgroundVariant {
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored === "aurora" || stored === "particles") return stored;
+  } catch {
+  }
+  return lastVariant;
+}
+
+function readServerVariant(): BackgroundVariant {
+  return "aurora";
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function writeVariant(next: BackgroundVariant) {
   lastVariant = next;
+  try {
+    window.localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+  }
+  for (const listener of listeners) listener();
 }
 
 const BackgroundContext = createContext<BackgroundValue | null>(null);
@@ -25,12 +58,10 @@ export function useBackground() {
 }
 
 export function BackgroundProvider({ children }: { children: ReactNode }) {
-  const [variant, setVariant] = useState<BackgroundVariant>(lastVariant);
+  const variant = useSyncExternalStore(subscribe, readVariant, readServerVariant);
 
   const toggle = () => {
-    const next = variant === "aurora" ? "particles" : "aurora";
-    rememberVariant(next);
-    setVariant(next);
+    writeVariant(variant === "aurora" ? "particles" : "aurora");
   };
 
   return (

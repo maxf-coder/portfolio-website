@@ -22,18 +22,15 @@ export function LanguageToggle() {
   const scrolled = useScrolled();
 
   const switchTo = (next: (typeof LOCALES)[number]) => {
-    if (next === locale) return;
-
-    writeLocaleCookie(next);
-
     const path = pathname === "/" ? "" : pathname;
     const hash = window.location.hash;
 
-    if (hash) {
-      router.replace(`${path}${hash}`, { locale: next });
-    } else {
-      router.replace(path || "/", { locale: next, scroll: false });
-    }
+    router.replace(`${path}${hash}` || "/", { locale: next, scroll: false });
+  };
+
+  const prefetch = (code: (typeof LOCALES)[number]) => {
+    if (code === locale) return;
+    router.prefetch(pathname || "/", { locale: code });
   };
 
   return (
@@ -51,6 +48,8 @@ export function LanguageToggle() {
             key={code}
             type="button"
             onClick={() => switchTo(code)}
+            onMouseEnter={() => prefetch(code)}
+            onFocus={() => prefetch(code)}
             aria-current={isActive ? "true" : undefined}
             lang={code}
             className={`focus-ring relative rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide transition-colors duration-300 ${

@@ -244,11 +244,29 @@ export function createParticles(): Painter {
       star.x += star.vx * seconds;
       star.y += star.vy * seconds;
 
-      if (star.x < -15) star.x = width + 15;
-      if (star.x > width + 15) star.x = -15;
-      if (star.y < -15) star.y = height + 15;
-      if (star.y > height + 15) star.y = -15;
+      let wrapped = false;
 
+      if (star.x < -15) {
+        star.x = width + 15;
+        wrapped = true;
+      }
+      if (star.x > width + 15) {
+        star.x = -15;
+        wrapped = true;
+      }
+      if (star.y < -15) {
+        star.y = height + 15;
+        wrapped = true;
+      }
+      if (star.y > height + 15) {
+        star.y = -15;
+        wrapped = true;
+      }
+
+      if (wrapped) {
+        star.trailX.length = 0;
+        star.trailY.length = 0;
+      }
       if (star.depth > 0.55) {
         star.trailX.push(star.x);
         star.trailY.push(star.y);
