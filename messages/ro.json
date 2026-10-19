@@ -61,5 +61,34 @@
       "deployment": "Implementare",
       "automation": "Scraping și automatizări"
     }
+  },
+  "Projects": {
+    "title": "Proiecte",
+    "subtitle": "Lucrări selectate și studii de caz",
+    "items": {
+      "fiesta": {
+        "title": "Fiesta Gastro Cafe",
+        "summary": "O platformă trilingvă pentru un restaurant, de la site-ul public până la datele din spate.",
+                "description": [
+          "Fiesta Gastro Cafe avea nevoie de mai mult decât un site: un singur loc în care restaurantul să se prezinte și să țină meniul la zi fără să umble în cod, în română, rusă și engleză.",
+          "Am construit backendul ca un API REST Django peste PostgreSQL și interfața în React, apoi am publicat totul în spatele Nginx pe un server Linux."
+        ],
+        "role": "Dezvoltare full-stack — model de date, API, interfață și implementare."
+      },
+      "vm-ai": {
+        "title": "VM.AI",
+        "summary": "Un pipeline de machine learning cu șapte etape, construit pentru olimpiada națională de AI din Moldova.",
+        "description": [
+          "VM.AI este un pipeline de machine learning cu șapte etape, construit pentru ONIA 2026, olimpiada națională de AI din Moldova. Fiecare etapă preia rezultatul celei precedente, de la datele brute până la un rezultat punctat.",
+          "Am construit executantul etapelor și partea de date, apoi am împachetat pipeline-ul astfel încât să poată fi rulat și reprodus în afara competiției."
+        ],
+        "role": "Arhitectura și implementarea pipeline-ului."
+      }
+    },
+    "role": "Rol",
+    "stack": "Tehnologii",
+    "live": "Site live",
+    "github": "GitHub",
+    "close": "Închide"
   }
 }

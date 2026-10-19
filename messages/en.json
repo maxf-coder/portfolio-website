@@ -61,5 +61,34 @@
       "deployment": "Deployment",
       "automation": "Scraping & automation"
     }
+  },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Selected work and case studies",
+    "items": {
+      "fiesta": {
+        "title": "Fiesta Gastro Cafe",
+        "summary": "A trilingual restaurant platform, from the public site to the data behind it.",
+        "description": [
+          "Fiesta Gastro Cafe needed more than a website: one place to present the restaurant and to keep the menu up to date without touching code, in Romanian, Russian and English.",
+          "I built the backend as a Django REST API on PostgreSQL and the interface as a React front end that consumes it, then deployed the whole thing behind Nginx on a Linux server."
+        ],
+        "role": "Full-stack development — data model, API, interface and deployment."
+      },
+      "vm-ai": {
+        "title": "VM.AI",
+        "summary": "A seven-stage machine learning pipeline built for Moldova's national AI olympiad.",
+        "description": [
+          "VM.AI is a seven-stage machine learning pipeline built for ONIA 2026, Moldova's national AI olympiad. Each stage takes the output of the previous one, from raw data to a scored result.",
+          "I built the stage runner and the data handling, and packaged the pipeline so it can be run and reproduced outside the competition."
+        ],
+        "role": "Pipeline architecture and implementation."
+      }
+    },
+    "role": "Role",
+    "stack": "Tech stack",
+    "live": "Live site",
+    "github": "GitHub",
+    "close": "Close"
   }
 }

@@ -23,6 +23,7 @@
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
 
   body {
