@@ -15,6 +15,7 @@
     "skills": "Skills",
     "about": "About",
     "contact": "Contact",
-    "logoLabel": "Switch background and return to the top"
+    "logoLabel": "Switch background and return to the top",
+    "navLabel": "Sections"
   }
 }

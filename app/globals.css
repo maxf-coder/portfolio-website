@@ -78,6 +78,13 @@
     radial-gradient(ellipse 60% 80% at 0% 70%, rgb(13 28 66 / 0.3) 0%, transparent 50%);
 }
 
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid rgba(252, 241, 208, 0.7);
+    outline-offset: 2px;
+  }
+}
+
 ::selection {
   background: rgba(252, 241, 208, 0.2);
   color: var(--color-cream);

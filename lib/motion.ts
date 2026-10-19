@@ -15,3 +15,5 @@ export const staggerCards = { hidden: {}, visible: { transition: { staggerChildr
 export const viewSection = { once: true, margin: "-100px" };
 export const viewCard = { once: true, margin: "-50px" };
 export const viewOnce = { once: true };
+
+export const navIndicator = { type: "spring", stiffness: 400, damping: 30 } as const;
