@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { LuExternalLink, LuX } from "react-icons/lu";
 import { SiGithub } from "react-icons/si";
 import type { Project } from "@/lib/projects";
-import { TECH } from "@/lib/tech";
+import { TechChip } from "@/lib/tech-icon";
 
 type ProjectDetailProps = {
   project: Project;
@@ -64,7 +64,7 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
         transition={{ type: "spring", stiffness: 300, damping: 28 }}
         className="glass-strong shadow-glow-cream max-h-[calc(100dvh-4rem)] w-full max-w-3xl overflow-y-auto rounded-3xl"
       >
-        <div className="sticky top-0 z-10 flex justify-end bg-gradient-to-b from-navy-900/90 to-transparent p-4 backdrop-blur-sm">
+        <div className="sticky top-0 z-10 flex h-14 items-center justify-end bg-gradient-to-b from-navy-900/90 to-transparent px-4 backdrop-blur-sm">
           <button
             type="button"
             autoFocus
@@ -82,6 +82,7 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
               src={project.cover}
               alt=""
               fill
+              unoptimized
               sizes="(min-width: 768px) 768px, 100vw"
               className="object-cover"
             />
@@ -113,18 +114,11 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
           <div>
             <h4 className="mb-3 text-xs uppercase tracking-wider text-cream/50">{t("stack")}</h4>
             <ul className="flex flex-wrap gap-2">
-              {project.tech.map((key) => {
-                const { label, Icon } = TECH[key];
-                return (
-                  <li
-                    key={key}
-                    className="glass flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-cream"
-                  >
-                    <Icon size={16} aria-hidden="true" />
-                    {label}
-                  </li>
-                );
-              })}
+              {project.tech.map((key) => (
+                <li key={key}>
+                  <TechChip tech={key} />
+                </li>
+              ))}
             </ul>
           </div>
 

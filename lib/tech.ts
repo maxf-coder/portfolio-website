@@ -2,6 +2,7 @@ import type { IconType } from "react-icons";
 import { TbApi } from "react-icons/tb";
 import {
   SiCelery,
+  SiCloudflare,
   SiDjango,
   SiDocker,
   SiFastapi,
@@ -24,27 +25,28 @@ import {
 } from "react-icons/si";
 
 export const TECH = {
-  python: { label: "Python", Icon: SiPython },
-  django: { label: "Django", Icon: SiDjango },
-  drf: { label: "Django REST Framework", Icon: TbApi },
-  fastapi: { label: "FastAPI", Icon: SiFastapi },
-  postgresql: { label: "PostgreSQL", Icon: SiPostgresql },
-  redis: { label: "Redis", Icon: SiRedis },
-  celery: { label: "Celery", Icon: SiCelery },
-  react: { label: "React", Icon: SiReact },
-  nextjs: { label: "Next.js", Icon: SiNextdotjs },
-  typescript: { label: "TypeScript", Icon: SiTypescript },
-  javascript: { label: "JavaScript", Icon: SiJavascript },
-  tailwind: { label: "Tailwind CSS", Icon: SiTailwindcss },
-  docker: { label: "Docker", Icon: SiDocker },
-  nginx: { label: "Nginx", Icon: SiNginx },
-  linux: { label: "Linux", Icon: SiLinux },
-  git: { label: "Git", Icon: SiGit },
-  github: { label: "GitHub", Icon: SiGithub },
-  scrapy: { label: "Scrapy", Icon: SiScrapy },
-  selenium: { label: "Selenium", Icon: SiSelenium },
-  pandas: { label: "pandas", Icon: SiPandas },
-  numpy: { label: "NumPy", Icon: SiNumpy },
-} satisfies Record<string, { label: string; Icon: IconType }>;
+  python: { label: "Python", Icon: SiPython, color: "#3776AB" },
+  django: { label: "Django", Icon: SiDjango, color: "#44B78B" },
+  drf: { label: "Django REST Framework", Icon: TbApi, color: "#A30000" },
+  fastapi: { label: "FastAPI", Icon: SiFastapi, color: "#009688" },
+  postgresql: { label: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
+  redis: { label: "Redis", Icon: SiRedis, color: "#FF4438" },
+  celery: { label: "Celery", Icon: SiCelery, color: "#37814A" },
+  react: { label: "React", Icon: SiReact, color: "#61DAFB" },
+  nextjs: { label: "Next.js", Icon: SiNextdotjs, color: "#FFFFFF" },
+  typescript: { label: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+  javascript: { label: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+  tailwind: { label: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  docker: { label: "Docker", Icon: SiDocker, color: "#2496ED" },
+  nginx: { label: "Nginx", Icon: SiNginx, color: "#009639" },
+  linux: { label: "Linux", Icon: SiLinux, color: "#FCC624" },
+  git: { label: "Git", Icon: SiGit, color: "#F05032" },
+  github: { label: "GitHub", Icon: SiGithub, color: "#FFFFFF" },
+  scrapy: { label: "Scrapy", Icon: SiScrapy, color: "#60A830" },
+  selenium: { label: "Selenium", Icon: SiSelenium, color: "#43B02A" },
+  pandas: { label: "pandas", Icon: SiPandas, color: "#B5A7E0" },
+  numpy: { label: "NumPy", Icon: SiNumpy, color: "#4DABCF" },
+  r2: { label: "Cloudflare R2", Icon: SiCloudflare, color: "#F38020" },
+} satisfies Record<string, { label: string; Icon: IconType; color: string }>;
 
 export type TechKey = keyof typeof TECH;

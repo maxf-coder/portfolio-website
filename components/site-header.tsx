@@ -42,11 +42,11 @@ export function SiteHeader() {
                 window.scrollTo({ top: 0 });
               }}
               aria-label={t("logoLabel")}
-              className="focus-ring glass-pill relative block transform-gpu rounded-2xl p-1.5 shadow-glow transition-transform duration-300 will-change-transform hover:scale-[1.04] active:scale-95"
+              className="focus-ring relative block transform-gpu transition-transform duration-300 will-change-transform hover:scale-[1.04] active:scale-95"
             >
               <m.span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 rounded-2xl"
+                className="pointer-events-none absolute inset-0 rounded-[22%]"
                 style={{ boxShadow: `0 0 28px 6px ${PULSE[variant]}` }}
                 initial={{ opacity: 0.15 }}
                 animate={{ opacity: reduceMotion ? 0.6 : [0.15, 1, 0.15] }}

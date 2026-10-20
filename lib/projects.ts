@@ -12,9 +12,11 @@ export type Project = {
 export const PROJECTS = [
   {
     id: "fiesta",
-    tech: ["python", "django", "drf", "postgresql", "react", "tailwind"],
+    tech: ["python", "django", "drf", "postgresql", "react", "typescript", "tailwind", "docker", "r2"],
+    cover: "/projects/fiesta/cover.webp",
     live: "https://fiestagastro.dev",
-    images: [],
+    github: "https://github.com/maxf-coder/Cafe_site",
+    images: ["/projects/fiesta/1.webp",],
   },
   {
     id: "vm-ai",

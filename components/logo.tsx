@@ -3,32 +3,19 @@ export function Logo({ size = 36 }: { size?: number }) {
     <svg
       width={size}
       height={size}
-      viewBox="0 0 48 48"
+      viewBox="0 0 900 900"
       fill="none"
       aria-hidden="true"
       className="block"
     >
-      <rect
-        x="1.5"
-        y="1.5"
-        width="45"
-        height="45"
-        rx="13"
-        fill="#0d1c42"
-        stroke="#fcf1d0"
-        strokeOpacity="0.9"
-        strokeWidth="1.5"
+      <path
+        d="M0 200C0 89.5435 89.5422 0 199.999 0C365.524 0 531.674 0 700 0C810.456 0 900 89.5422 900 199.999C900 365.524 900 531.674 900 700C900 810.456 810.458 900 700.001 900C534.476 900 368.326 900 200 900C89.5435 900 0 810.458 0 700.001C0 534.476 0 368.326 0 200Z"
+        fill="#010533"
       />
-      <text
-        x="24"
-        y="31"
-        textAnchor="middle"
-        fontSize="18"
-        fontWeight="600"
-        fill="#fcf1d0"
-      >
-        MF
-      </text>
+      <path
+        d="M212 293L366 394L506 293H688V347H525V418H666V470H525V607H469V389L367 464L268 396V607H212V293Z"
+        fill="#F9E9C0"
+      />
     </svg>
   );
 }
