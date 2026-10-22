@@ -18,6 +18,7 @@ type ProjectDetailProps = {
 
 export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetailProps) {
   const t = useTranslations("Projects");
+  const title = t(`items.${project.id}.title`);
   const description = t.raw(`items.${project.id}.description`) as string[];
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -93,7 +94,7 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
         <div className="space-y-6 p-6 sm:p-8">
           <div>
             <h3 id={`project-${project.id}-title`} className="text-2xl font-bold text-cream sm:text-3xl">
-              {t(`items.${project.id}.title`)}
+              {title}
             </h3>
             <p className="mt-2 text-cream/70">{t(`items.${project.id}.summary`)}</p>
           </div>
@@ -152,11 +153,11 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
           {project.images.length > 0 ? (
             <div className="space-y-4">
               <h4 className="text-xs uppercase tracking-wider text-cream/50">{t("gallery")}</h4>
-              {project.images.map((image) => (
+              {project.images.map((image, index) => (
                 <Image
                   key={image.src}
                   src={image.src}
-                  alt=""
+                  alt={`${title} — screenshot ${index + 1}`}
                   width={image.width}
                   height={image.height}
                   unoptimized

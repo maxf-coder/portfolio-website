@@ -30,7 +30,7 @@ export function ProjectCard({ project, title, summary, onOpen }: ProjectCardProp
         ref={openButtonRef}
         type="button"
         onClick={(event) => onOpen(event.currentTarget)}
-        aria-label={title}
+        aria-labelledby={`project-card-${project.id}-title`}
         className="focus-ring absolute inset-0 z-10 rounded-3xl"
       />
 
@@ -59,7 +59,9 @@ export function ProjectCard({ project, title, summary, onOpen }: ProjectCardProp
       </div>
 
       <div className="p-5">
-        <h3 className="mb-2 text-lg font-bold text-cream">{title}</h3>
+        <h3 id={`project-card-${project.id}-title`} className="mb-2 text-lg font-bold text-cream">
+          {title}
+        </h3>
         <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-cream/70">{summary}</p>
 
         <ul

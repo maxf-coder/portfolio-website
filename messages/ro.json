@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "Maxim Furculiță - Dezvoltator Backend & Full-stack",
+    "title": "Maxim Furculiță – Dezvoltator Backend & Full-stack",
     "description": "Portofoliul lui Maxim Furculiță, dezvoltator freelancer backend și full-stack care construiește aplicații web, API-uri și automatizări."
   },
   "Hero": {
     "name": "Maxim Furculiță",
     "role": "Dezvoltator Backend & Full-stack",
     "cta": "Hai să construim proiectul tău",
-    "scroll": "Derulează la servicii"
+    "scroll": "Vezi serviciile"
   },
   "Services": {
     "title": "Servicii",
@@ -58,7 +58,7 @@
     "groups": {
       "backend": "Backend",
       "frontend": "Frontend",
-      "deployment": "Implementare",
+      "deployment": "Deployment",
       "automation": "Scraping și automatizări"
     }
   },
@@ -80,7 +80,7 @@
         "title": "VM.AI",
         "summary": "Pipeline ML în 7 etape care transformă limbajul natural și imaginile în programe inteligente și învață din obiceiurile tale.",
         "description": [
-          "VM.AI este un asistent de planificare personală bazat pe inteligență artificială. În loc să completezi manual formulare de calendar, scrii o sarcină așa cum ai spune-o (\"sală în fiecare luni la 6:00\", \"termin raportul până vineri\") sau încarci o fotografie, iar sistemul o transformă într-o intrare structurată, gata de calendar, cu categorie, dificultate, importanță, durată, termen limită, locație și recurență.",
+          "VM.AI este un asistent de planificare personală bazat pe inteligență artificială. În loc să completezi manual formulare de calendar, scrii o sarcină așa cum ai spune-o („sală în fiecare luni la 6:00”, „termin raportul până vineri”) sau încarci o fotografie, iar sistemul o transformă într-o intrare structurată, pregătită pentru calendar, cu categorie, dificultate, importanță, durată, termen limită, locație și recurență.",
           "Sistemul învață din obiceiurile tale. Fiecare sarcină finalizată îmbunătățește predicțiile viitoare pentru durată și prioritate, astfel încât programele devin tot mai realiste în timp. Scopul este reducerea introducerii manuale a sarcinilor și a timpului de planificare, care consumă ore din fiecare săptămână de lucru.",
           "În spate se află un pipeline de machine learning în 7 etape: un model T5 ajustat (fine-tuned) analizează limbajul natural, EfficientNet-B4 clasifică imaginile, MiniLM asociază sarcinile cu cele anterioare, iar XGBoost estimează duratele. Backend-ul rulează pe FastAPI, SQLAlchemy și PostgreSQL, iar frontend-ul este construit cu React 19 + TypeScript. În prezent este un prototip funcțional."
         ],

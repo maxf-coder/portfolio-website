@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Maxim Furculiță - Backend & Full-stack Engineer",
+    "title": "Maxim Furculiță – Backend & Full-stack Engineer",
     "description": "Portfolio of Maxim Furculiță, a freelance backend and full-stack engineer building web apps, APIs and automations."
   },
   "Hero": {
@@ -72,13 +72,13 @@
         "description": [
           "Fiesta Gastro Cafe needed a website that works for its guests in three languages and that its own staff can run without a developer. I built a complete platform in Romanian, English, and Russian, where visitors browse the full menu, discover the cafe, and see events and charity initiatives.",
           "Everything is managed from a custom admin panel: menu items, translations, images, pages, and contact details. Staff update content in minutes, and changes appear on the site immediately.",
-          "Under the hood, a Django REST API serves content to a React 19 + TypeScript frontend styled with Tailwind. Data lives in PostgreSQL, media in Cloudflare R2, and the whole project is containerized with Docker and deployed on Render with a custom domain managed through Cloudflare.  "
+          "Under the hood, a Django REST API serves content to a React 19 + TypeScript frontend styled with Tailwind. Data lives in PostgreSQL, media in Cloudflare R2, and the whole project is containerized with Docker and deployed on Render with a custom domain managed through Cloudflare."
         ],
         "role": "Solo full-stack developer. Responsible for architecture, backend API, frontend, deployment, and domain setup."
       },
       "vm-ai": {
         "title": "VM.AI",
-        "summary": "7-stage ML pipeline that turns natural language and images into smart schedules, and learns from your habits.",
+        "summary": "7-stage ML pipeline that turns natural language and images into smart schedules and learns from your habits.",
         "description": [
           "VM.AI is an AI-powered personal scheduling assistant. Instead of filling in calendar forms by hand, you write a task the way you would say it (\"gym every Monday at 6am\", \"finish report by Friday\") or upload a photo, and the system turns it into a structured, calendar-ready entry with category, difficulty, importance, duration, deadline, location, and recurrence.",
           "The system learns from your habits. Each completed task refines future predictions of duration and priority, so schedules become more realistic over time. The goal is to cut manual task entry and the scheduling overhead that takes hours from every working week.",

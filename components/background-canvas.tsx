@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Pointer, Painter } from "./background-painters";
-import { createAurora, createParticles, getPainter } from "./background-painters";
+import { getPainter } from "./background-painters";
 
 
 export function BackgroundCanvas({ variant }: { variant: "aurora" | "particles" }) {
