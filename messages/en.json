@@ -78,18 +78,30 @@
       },
       "vm-ai": {
         "title": "VM.AI",
-        "summary": "A seven-stage machine learning pipeline built for Moldova's national AI olympiad.",
+        "summary": "7-stage ML pipeline that turns natural language and images into smart schedules, and learns from your habits.",
         "description": [
-          "VM.AI is a seven-stage machine learning pipeline built for ONIA 2026, Moldova's national AI olympiad. Each stage takes the output of the previous one, from raw data to a scored result.",
-          "I built the stage runner and the data handling, and packaged the pipeline so it can be run and reproduced outside the competition."
+          "VM.AI is an AI-powered personal scheduling assistant. Instead of filling in calendar forms by hand, you write a task the way you would say it (\"gym every Monday at 6am\", \"finish report by Friday\") or upload a photo, and the system turns it into a structured, calendar-ready entry with category, difficulty, importance, duration, deadline, location, and recurrence.",
+          "The system learns from your habits. Each completed task refines future predictions of duration and priority, so schedules become more realistic over time. The goal is to cut manual task entry and the scheduling overhead that takes hours from every working week.",
+          "Under the hood, it is a 7-stage machine learning pipeline: a fine-tuned T5 model parses natural language, EfficientNet-B4 classifies images, MiniLM matches tasks to past ones, and XGBoost predicts durations. The backend runs on FastAPI, SQLAlchemy, and PostgreSQL, with a React 19 + TypeScript frontend. Currently a working prototype."
         ],
-        "role": "Pipeline architecture and implementation."
+        "role": "Lead developer. Architecture, backend, and part of the ML pipeline."
+      },
+      "bookstorescraper": {
+        "title": "BookStoreScraper",
+        "summary": "Web scraper that collects book listings, prices, and per-store stock from an online bookstore into a MySQL database.",
+        "description": [
+          "Companies that need market data often collect it by hand, which is slow and error-prone. BookStoreScraper automates this for an online bookstore: it gathers book listings (title, price, discounts, cover, publisher and other details), the physical store locations, and which store has each book in stock.",
+          "Raw web data is messy, so every item goes through a cleaning pipeline that validates and normalizes the fields before saving. Records are upserted into the database, so repeated runs update existing data without creating duplicates. Dropped items and errors are logged, which makes problems easy to trace.",
+          "Under the hood, Scrapy spiders collect the data, and ScrapeOps handles anti-bot protection with rotating browser headers and a proxy fallback. Data is stored in MySQL with a relational schema (books, stores, and per-store stock), and flexible book attributes are kept as JSON. Setup is configured through environment variables, and each module is documented."
+        ],
+        "role": "Solo developer. Scraper design, data cleaning, and database."
       }
     },
     "role": "Role",
     "stack": "Tech stack",
     "live": "Live site",
     "github": "GitHub",
-    "close": "Close"
+    "close": "Close",
+    "gallery": "Gallery"
   }
 }

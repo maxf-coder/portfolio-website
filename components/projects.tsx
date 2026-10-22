@@ -64,7 +64,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative px-4 py-24 sm:px-6">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <m.div
           className="mb-16 text-center"
           variants={fadeUpHeading}
@@ -89,7 +89,7 @@ export function Projects() {
               key={project.id}
               variants={fadeUpCard}
               transition={revealCard}
-              className="w-full md:w-[calc((100%_-_1.5rem)/2)]"
+              className="w-full md:w-[calc((100%_-_1.5rem)/2)] lg:w-[calc((100%_-_3rem)/3)]"
             >
               <ProjectCard
                 project={project}

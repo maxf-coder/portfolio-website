@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbBinaryTree, TbRoute } from "react-icons/tb";
 import {
   SiCelery,
   SiCloudflare,
@@ -8,6 +8,7 @@ import {
   SiFastapi,
   SiGit,
   SiGithub,
+  SiHuggingface,
   SiJavascript,
   SiLinux,
   SiNextdotjs,
@@ -15,13 +16,19 @@ import {
   SiNumpy,
   SiPandas,
   SiPostgresql,
+  SiPydantic,
+  SiPytest,
+  SiPytorch,
   SiPython,
   SiReact,
   SiRedis,
+  SiScikitlearn,
   SiScrapy,
   SiSelenium,
+  SiSqlalchemy,
   SiTailwindcss,
   SiTypescript,
+  SiMysql,
 } from "react-icons/si";
 
 export const TECH = {
@@ -47,6 +54,15 @@ export const TECH = {
   pandas: { label: "pandas", Icon: SiPandas, color: "#B5A7E0" },
   numpy: { label: "NumPy", Icon: SiNumpy, color: "#4DABCF" },
   r2: { label: "Cloudflare R2", Icon: SiCloudflare, color: "#F38020" },
+  pytorch: { label: "PyTorch", Icon: SiPytorch, color: "#EE4C2C" },
+  huggingface: { label: "Hugging Face", Icon: SiHuggingface, color: "#FFD21E" },
+  scikitlearn: { label: "scikit-learn", Icon: SiScikitlearn, color: "#F7931E" },
+  xgboost: { label: "XGBoost", Icon: TbBinaryTree, color: "#4CAF50" },
+  sqlalchemy: { label: "SQLAlchemy", Icon: SiSqlalchemy, color: "#D71F00" },
+  pydantic: { label: "Pydantic", Icon: SiPydantic, color: "#E92063" },
+  pytest: { label: "pytest", Icon: SiPytest, color: "#0A9EDC" },
+  mysql: { label: "MySQL", Icon: SiMysql, color: "#4479A1" },
+  scrapeops: { label: "ScrapeOps", Icon: TbRoute, color: "#4C8DFF" },
 } satisfies Record<string, { label: string; Icon: IconType; color: string }>;
 
 export type TechKey = keyof typeof TECH;

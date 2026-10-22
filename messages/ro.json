@@ -68,27 +68,40 @@
     "items": {
       "fiesta": {
         "title": "Fiesta Gastro Cafe",
-        "summary": "O platformă trilingvă pentru un restaurant, de la site-ul public până la datele din spate.",
-                "description": [
-          "Fiesta Gastro Cafe avea nevoie de mai mult decât un site: un singur loc în care restaurantul să se prezinte și să țină meniul la zi fără să umble în cod, în română, rusă și engleză.",
-          "Am construit backendul ca un API REST Django peste PostgreSQL și interfața în React, apoi am publicat totul în spatele Nginx pe un server Linux."
+        "summary": "Site web trilingv (RO/EN/RU) pentru o cafenea, cu panou de administrare pentru gestionarea conținutului de către personal.",
+        "description": [
+          "Fiesta Gastro Cafe avea nevoie de un site care să funcționeze pentru oaspeți în trei limbi și pe care personalul propriu să îl poată administra fără un dezvoltator. Am construit o platformă completă în română, engleză și rusă, în care vizitatorii pot explora meniul complet, pot descoperi cafeneaua și pot vedea evenimentele și inițiativele de caritate.",
+          "Totul se gestionează dintr-un panou de administrare personalizat: produsele din meniu, traducerile, imaginile, paginile și datele de contact. Personalul actualizează conținutul în câteva minute, iar modificările apar imediat pe site.",
+          "În spate, un API Django REST furnizează conținutul către un frontend React 19 + TypeScript stilizat cu Tailwind. Datele sunt stocate în PostgreSQL, fișierele media în Cloudflare R2, iar întregul proiect este containerizat cu Docker și publicat pe Render, cu un domeniu propriu gestionat prin Cloudflare."
         ],
-        "role": "Dezvoltare full-stack — model de date, API, interfață și implementare."
+        "role": "Dezvoltator full-stack independent. Responsabil de arhitectură, API-ul backend, frontend, publicare și configurarea domeniului."
       },
       "vm-ai": {
         "title": "VM.AI",
-        "summary": "Un pipeline de machine learning cu șapte etape, construit pentru olimpiada națională de AI din Moldova.",
+        "summary": "Pipeline ML în 7 etape care transformă limbajul natural și imaginile în programe inteligente și învață din obiceiurile tale.",
         "description": [
-          "VM.AI este un pipeline de machine learning cu șapte etape, construit pentru ONIA 2026, olimpiada națională de AI din Moldova. Fiecare etapă preia rezultatul celei precedente, de la datele brute până la un rezultat punctat.",
-          "Am construit executantul etapelor și partea de date, apoi am împachetat pipeline-ul astfel încât să poată fi rulat și reprodus în afara competiției."
+          "VM.AI este un asistent de planificare personală bazat pe inteligență artificială. În loc să completezi manual formulare de calendar, scrii o sarcină așa cum ai spune-o (\"sală în fiecare luni la 6:00\", \"termin raportul până vineri\") sau încarci o fotografie, iar sistemul o transformă într-o intrare structurată, gata de calendar, cu categorie, dificultate, importanță, durată, termen limită, locație și recurență.",
+          "Sistemul învață din obiceiurile tale. Fiecare sarcină finalizată îmbunătățește predicțiile viitoare pentru durată și prioritate, astfel încât programele devin tot mai realiste în timp. Scopul este reducerea introducerii manuale a sarcinilor și a timpului de planificare, care consumă ore din fiecare săptămână de lucru.",
+          "În spate se află un pipeline de machine learning în 7 etape: un model T5 ajustat (fine-tuned) analizează limbajul natural, EfficientNet-B4 clasifică imaginile, MiniLM asociază sarcinile cu cele anterioare, iar XGBoost estimează duratele. Backend-ul rulează pe FastAPI, SQLAlchemy și PostgreSQL, iar frontend-ul este construit cu React 19 + TypeScript. În prezent este un prototip funcțional."
         ],
-        "role": "Arhitectura și implementarea pipeline-ului."
+        "role": "Dezvoltator principal. Arhitectură, backend și o parte din pipeline-ul ML."
+      },
+      "bookstorescraper": {
+        "title": "BookStoreScraper",
+        "summary": "Web scraper care colectează listele de cărți, prețurile și stocul pe librării dintr-o librărie online într-o bază de date MySQL.",
+        "description": [
+          "Companiile care au nevoie de date de piață le colectează adesea manual, ceea ce este lent și predispus la erori. BookStoreScraper automatizează acest proces pentru o librărie online: adună listele de cărți (titlu, preț, reduceri, copertă, editură și alte detalii), locațiile magazinelor fizice și în ce magazin este disponibilă fiecare carte.",
+          "Datele web brute sunt dezordonate, așa că fiecare element trece printr-un pipeline de curățare, care validează și normalizează câmpurile înainte de salvare. Înregistrările sunt inserate sau actualizate (upsert) în baza de date, astfel încât rulările repetate actualizează datele existente fără a crea duplicate. Elementele respinse și erorile sunt înregistrate în log-uri, ceea ce face ușoară depistarea problemelor.",
+          "În spate, spider-ele Scrapy colectează datele, iar ScrapeOps asigură protecția anti-bot prin rotirea antetelor de browser și un proxy de rezervă. Datele sunt stocate în MySQL, cu o schemă relațională (cărți, magazine și stoc pe magazin), iar atributele variabile ale cărților sunt păstrate ca JSON. Configurarea se face prin variabile de mediu, iar fiecare modul este documentat."
+        ],
+        "role": "Dezvoltator independent. Proiectarea scraper-ului, curățarea datelor și baza de date."
       }
     },
     "role": "Rol",
     "stack": "Tehnologii",
     "live": "Site live",
     "github": "GitHub",
-    "close": "Închide"
+    "close": "Închide",
+    "gallery": "Galerie"
   }
 }

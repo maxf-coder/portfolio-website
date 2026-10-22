@@ -149,6 +149,23 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
               ) : null}
             </div>
           ) : null}
+          {project.images.length > 0 ? (
+            <div className="space-y-4">
+              <h4 className="text-xs uppercase tracking-wider text-cream/50">{t("gallery")}</h4>
+              {project.images.map((image) => (
+                <Image
+                  key={image.src}
+                  src={image.src}
+                  alt=""
+                  width={image.width}
+                  height={image.height}
+                  unoptimized
+                  sizes="(min-width: 768px) 704px, 100vw"
+                  className="h-auto w-full rounded-2xl"
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
       </m.div>
     </m.div>,
