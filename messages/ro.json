@@ -106,5 +106,24 @@
     "github": "GitHub",
     "close": "Închide",
     "gallery": "Galerie"
+  },
+  "About": {
+    "title": "Despre mine",
+    "subtitle": "Cum lucrez și ce contează pentru mine",
+    "text": "Sunt dezvoltator freelancer autodidact și construiesc aplicații web, API-uri și automatizări. Mă axez pe cod curat, rezultate rapide și comunicare clară. Lucrez cu afaceri și startup-uri din România și din străinătate.",
+    "facts": {
+      "location": { "label": "Locuiesc în", "value": "România" },
+      "languages": { "label": "Limbi", "value": "Română, Engleză, Rusă" },
+      "focus": { "label": "Domeniu", "value": "Backend & Full-stack" },
+      "experience": { "label": "Experiență", "value": "Freelance & Remote" }
+    },
+    "cv": {
+      "button": "Descarcă CV",
+      "title": "Alege un CV pentru descărcare",
+      "close": "Închide",
+      "format": "PDF",
+      "backend": "CV Backend",
+      "fullstack": "CV Full-stack"
+    }
   }
 }

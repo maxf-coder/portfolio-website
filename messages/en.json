@@ -106,5 +106,24 @@
     "github": "GitHub",
     "close": "Close",
     "gallery": "Gallery"
+  },
+  "About": {
+    "title": "About me",
+    "subtitle": "How I work and what I care about",
+    "text": "I'm a self-taught freelance developer who builds web apps, APIs and automations. I care about clean code, fast results and clear communication. I work with businesses and startups in Romania and abroad.",
+    "facts": {
+      "location": { "label": "Based in", "value": "Romania" },
+      "languages": { "label": "Languages", "value": "Romanian, English, Russian" },
+      "focus": { "label": "Focus", "value": "Backend & Full-stack" },
+      "experience": { "label": "Experience", "value": "Freelance & Remote" }
+    },
+    "cv": {
+      "button": "Download CV",
+      "title": "Choose a CV to download",
+      "close": "Close",
+      "format": "PDF",
+      "backend": "Backend CV",
+      "fullstack": "Full-stack CV"
+    }
   }
 }
