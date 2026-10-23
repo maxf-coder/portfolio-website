@@ -3,13 +3,15 @@ import { TbApi, TbBinaryTree, TbRoute } from "react-icons/tb";
 import {
   SiCelery,
   SiCloudflare,
+  SiCss,
   SiDjango,
   SiDocker,
   SiFastapi,
   SiGit,
   SiGithub,
-  SiHuggingface,
+  SiHtml5,
   SiJavascript,
+  SiHuggingface,
   SiLinux,
   SiNextdotjs,
   SiNginx,
@@ -26,9 +28,13 @@ import {
   SiScrapy,
   SiSelenium,
   SiSqlalchemy,
+  SiSqlite,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
   SiMysql,
+  SiFigma,
+  SiRender,
 } from "react-icons/si";
 
 export const TECH = {
@@ -63,6 +69,17 @@ export const TECH = {
   pytest: { label: "pytest", Icon: SiPytest, color: "#0A9EDC" },
   mysql: { label: "MySQL", Icon: SiMysql, color: "#4479A1" },
   scrapeops: { label: "ScrapeOps", Icon: TbRoute, color: "#4C8DFF" },
+  sqlite: { label: "SQLite", Icon: SiSqlite, color: "#5AA9D6" },
+  html5: { label: "HTML5", Icon: SiHtml5, color: "#E34F26" },
+  css3: { label: "CSS3", Icon: SiCss, color: "#8B5CF6" },
+  vite: { label: "Vite", Icon: SiVite, color: "#646CFF" },
+  cloudflare: { label: "Cloudflare", Icon: SiCloudflare, color: "#F6821F" },
+  figma: { label: "Figma", Icon: SiFigma, color: "#F24E1E" },
+  render: { label: "Render", Icon: SiRender, color: "#46E3B7" },
 } satisfies Record<string, { label: string; Icon: IconType; color: string }>;
 
 export type TechKey = keyof typeof TECH;
+
+export const SHORT_LABELS: Partial<Record<TechKey, string>> = {
+  drf: "DRF",
+};

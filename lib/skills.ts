@@ -1,10 +1,29 @@
 import type { TechKey } from "./tech";
 
-export const SKILL_GROUPS = [
-  { id: "backend", tech: ["python", "django", "drf", "fastapi", "postgresql", "redis", "celery"] },
-  { id: "frontend", tech: ["react", "nextjs", "typescript", "javascript", "tailwind"] },
-  { id: "deployment", tech: ["docker", "nginx", "linux", "git", "github"] },
-  { id: "automation", tech: ["scrapy", "selenium", "pandas", "numpy"] },
-] as const satisfies readonly { id: string; tech: readonly TechKey[] }[];
+export type SkillGroup = {
+  id: "backend" | "frontend" | "devops" | "scraping" | "ml";
+  items: readonly TechKey[];
+};
 
-export type SkillGroupId = (typeof SKILL_GROUPS)[number]["id"];
+export const SKILL_GROUPS = [
+  {
+    id: "backend",
+    items: ["python", "django", "drf", "fastapi", "sqlalchemy", "postgresql", "mysql", "sqlite"],
+  },
+  {
+    id: "frontend",
+    items: ["react", "typescript", "javascript", "nextjs", "tailwind", "html5", "css3", "vite", "figma"],
+  },
+  {
+    id: "devops",
+    items: ["docker", "linux", "git", "github", "render", "cloudflare"],
+  },
+  {
+    id: "scraping",
+    items: ["scrapy", "pandas", "numpy"],
+  },
+  {
+    id: "ml",
+    items: ["pytorch", "huggingface", "scikitlearn", "xgboost"],
+  },
+] as const satisfies readonly SkillGroup[];

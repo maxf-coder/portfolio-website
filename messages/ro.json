@@ -55,11 +55,14 @@
     "menu": "Meniu"
   },
   "Skills": {
+    "title": "Abilități",
+    "subtitle": "Tehnologiile cu care lucrez",
     "groups": {
-      "backend": "Backend",
-      "frontend": "Frontend",
-      "deployment": "Deployment",
-      "automation": "Scraping și automatizări"
+      "backend": "Backend și baze de date",
+      "frontend": "Frontend și design",
+      "devops": "DevOps și unelte",
+      "scraping": "Scraping și automatizări",
+      "ml": "Machine Learning"
     }
   },
   "Projects": {

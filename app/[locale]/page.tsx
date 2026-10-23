@@ -3,8 +3,9 @@ import type { SectionId } from "@/lib/sections";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
 import { Projects } from "@/components/projects";
+import { Skills } from "@/components/skills";
 
-const PENDING: SectionId[] = ["skills", "about", "contact"];
+const PENDING: SectionId[] = ["about", "contact"];
 
 export default async function Home() {
   const t = await getTranslations("Navigation");
@@ -14,6 +15,7 @@ export default async function Home() {
       <Hero />
       <Services />
       <Projects />
+      <Skills />
       {PENDING.map((id) => (
         <section key={id} id={id} className="flex min-h-screen items-center justify-center px-6">
           <h2 className="text-2xl font-semibold text-cream">{t(id)}</h2>

@@ -55,11 +55,14 @@
     "menu": "Menu"
   },
   "Skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with",
     "groups": {
-      "backend": "Backend",
-      "frontend": "Frontend",
-      "deployment": "Deployment",
-      "automation": "Scraping & automation"
+      "backend": "Backend & Databases",
+      "frontend": "Frontend & Design",
+      "devops": "DevOps & Tools",
+      "scraping": "Scraping & Automation",
+      "ml": "Machine Learning"
     }
   },
   "Projects": {
