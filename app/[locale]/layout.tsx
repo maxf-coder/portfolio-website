@@ -46,6 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: locale === "ro" ? "ro_RO" : "en_US",
       title: t("title"),
       description: t("description"),
+      images: [{ url: "https://maximf.com/og-image.png", width: 1200, height: 630 }],
     },
   };
 }
