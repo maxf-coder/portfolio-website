@@ -7,6 +7,8 @@ import { BackgroundProvider } from "@/components/providers/background-provider";
 import "../globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@/components/providers/analytics";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
 
   return {
-    metadataBase: new URL("https://maximf.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: t("title"),
       template: "%s | Maxim Furculiță",
@@ -40,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: `/${locale}`,
-      siteName: "Maxim Furculiță",
+      siteName: SITE_NAME,
       locale: locale === "ro" ? "ro_RO" : "en_US",
       title: t("title"),
       description: t("description"),
@@ -61,6 +63,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
               {children}
               </MotionProvider>
           </BackgroundProvider>
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
