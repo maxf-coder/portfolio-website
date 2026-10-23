@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { Pointer, Painter } from "./background-painters";
-import { getPainter } from "./background-painters";
+import type { Pointer, Painter } from "@/components/background/background-painters";
+import { getPainter } from "@/components/background/background-painters";
 
 
 export function BackgroundCanvas({ variant }: { variant: "aurora" | "particles" }) {

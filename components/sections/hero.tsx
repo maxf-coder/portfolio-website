@@ -3,7 +3,7 @@
 import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { fadeUpHero, heroItem, staggerHero } from "@/lib/motion";
-import { ScrollHint } from "./scroll-hint";
+import { ScrollHint } from "@/components/ui/scroll-hint";
 
 export function Hero() {
   const t = useTranslations("Hero");

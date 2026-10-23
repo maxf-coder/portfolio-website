@@ -13,8 +13,8 @@ import {
   viewCard,
   viewSection,
 } from "@/lib/motion";
-import { ProjectCard } from "./project-card";
-import { ProjectDetail } from "./project-detail";
+import { ProjectCard } from "@/components/ui/project-card";
+import { ProjectDetail } from "@/components/ui/project-detail";
 
 const HASH_CHANGED = "portfolio:hash-changed";
 

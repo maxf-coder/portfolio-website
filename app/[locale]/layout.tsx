@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { MotionProvider } from "@/components/motion-provider";
-import { BackgroundProvider } from "@/components/background-provider";
+import { MotionProvider } from "@/components/providers/motion-provider";
+import { BackgroundProvider } from "@/components/providers/background-provider";
 import "../globals.css";
-import { SiteHeader } from "@/components/site-header";
+import { SiteHeader } from "@/components/layout/site-header";
 import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({

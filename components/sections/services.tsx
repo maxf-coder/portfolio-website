@@ -12,7 +12,7 @@ import {
   viewCard,
   viewSection,
 } from "@/lib/motion";
-import { ServiceCard } from "./service-card";
+import { ServiceCard } from "@/components/ui/service-card";
 
 export function Services() {
   const t = useTranslations("Services");

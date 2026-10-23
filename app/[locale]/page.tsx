@@ -1,10 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import type { SectionId } from "@/lib/sections";
-import { Hero } from "@/components/hero";
-import { Services } from "@/components/services";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { About } from "@/components/about";
+import { Hero } from "@/components/sections/hero";
+import { Services } from "@/components/sections/services";
+import { Projects } from "@/components/sections/projects";
+import { Skills } from "@/components/sections/skills";
+import { About } from "@/components/sections/about";
 
 const PENDING: SectionId[] = ["contact"];
 

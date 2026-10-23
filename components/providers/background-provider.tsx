@@ -6,7 +6,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import { BackgroundCanvas } from "./background-canvas";
+import { BackgroundCanvas } from "@/components/background/background-canvas";
 
 export type BackgroundVariant = "aurora" | "particles";
 

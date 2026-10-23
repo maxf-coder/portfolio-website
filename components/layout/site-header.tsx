@@ -3,14 +3,14 @@
 import { useCallback, useState } from "react";
 import { m, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useBackground, type BackgroundVariant } from "./background-provider";
-import { NavPill } from "./nav-pill";
-import { MobileNav } from "./mobile-nav";
-import { Logo } from "./logo";
+import { useBackground, type BackgroundVariant } from "@/components/providers/background-provider";
+import { NavPill } from "@/components/layout/nav-pill";
+import { MobileNav } from "@/components/layout/mobile-nav";
+import { Logo } from "@/components/layout/logo";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
 import { useHeaderHide } from "@/hooks/use-header-hide";
 import { headerHide } from "@/lib/motion";
-import { LanguageToggle } from "./language-toggle";
+import { LanguageToggle } from "@/components/layout/language-toggle";
 
 const PULSE: Record<BackgroundVariant, string> = {
   aurora: "rgba(252, 241, 208, 0.9)",
