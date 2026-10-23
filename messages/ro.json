@@ -125,5 +125,39 @@
       "backend": "CV Backend",
       "fullstack": "CV Full-stack"
     }
+  },
+  "Contact": {
+    "title": "Hai să vorbim despre proiectul tău",
+    "subtitle": "Spune-mi de ce ai nevoie și îți răspund.",
+    "form": {
+      "name": "Nume",
+      "namePlaceholder": "Numele tău",
+      "email": "Email",
+      "emailPlaceholder": "tu@exemplu.com",
+      "message": "Mesaj",
+      "messagePlaceholder": "Spune-mi despre proiectul tău...",
+      "send": "Trimite mesajul",
+      "sending": "Se trimite...",
+      "success": "Mulțumesc! Mesajul a fost trimis. Îți răspund în cel mai scurt timp.",
+      "error": "Ceva nu a mers. Încearcă din nou sau scrie-mi direct pe email.",
+      "reset": "Trimite alt mesaj"
+    },
+    "errors": {
+      "name": "Spune-mi, te rog, cum te cheamă.",
+      "emailRequired": "Adaugă o adresă de email.",
+      "emailInvalid": "Adresa de email nu pare corectă.",
+      "message": "Scrie, te rog, un mesaj scurt."
+    },
+    "direct": {
+      "title": "Contact direct",
+      "copy": "Copiază adresa de email",
+      "copied": "Adresa de email a fost copiată"
+    },
+   "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
   }
 }

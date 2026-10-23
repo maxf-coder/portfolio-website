@@ -125,5 +125,39 @@
       "backend": "Backend CV",
       "fullstack": "Full-stack CV"
     }
+  },
+  "Contact": {
+    "title": "Let's talk about your project",
+    "subtitle": "Tell me what you need and I'll get back to you.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent. I'll reply as soon as I can.",
+      "error": "Something went wrong. Please try again or email me directly.",
+      "reset": "Send another message"
+    },
+    "errors": {
+      "name": "Please tell me your name.",
+      "emailRequired": "Please add an email address.",
+      "emailInvalid": "That email address does not look right.",
+      "message": "Please write a short message."
+    },
+    "direct": {
+      "title": "Direct contact",
+      "copy": "Copy email address",
+      "copied": "Email address copied"
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
   }
 }
