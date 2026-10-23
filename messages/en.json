@@ -146,7 +146,10 @@
       "name": "Please tell me your name.",
       "emailRequired": "Please add an email address.",
       "emailInvalid": "That email address does not look right.",
-      "message": "Please write a short message."
+      "message": "Please write a short message.",
+      "required": "Please fill in this field.",
+      "invalid": "Please check this value.",
+      "tooLong": "This is too long."
     },
     "direct": {
       "title": "Direct contact",

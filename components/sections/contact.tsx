@@ -29,6 +29,12 @@ type Field = "name" | "email" | "message";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const SERVER_ERROR_KEYS = {
+  required: "errors.required",
+  invalid: "errors.invalid",
+  too_long: "errors.tooLong",
+} as const;
+
 export function Contact() {
   const t = useTranslations("Contact");
   const formRef = useRef<HTMLFormElement>(null);
@@ -63,10 +69,43 @@ export function Contact() {
 
     setStatus("sending");
 
-    // Lesson 11 replaces this with fetch("/api/contact").
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setStatus("success");
-    setValues({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (response.status === 422) {
+        const data = (await response.json()) as {
+          fields?: Partial<Record<Field, keyof typeof SERVER_ERROR_KEYS>>;
+        };
+        const serverErrors: Partial<Record<Field, string>> = {};
+
+        for (const [field, code] of Object.entries(data.fields ?? {})) {
+          serverErrors[field as Field] = t(SERVER_ERROR_KEYS[code]);
+        }
+
+        setErrors(serverErrors);
+        setStatus("idle");
+
+        const first = (Object.keys(serverErrors) as Field[])[0];
+        if (first) {
+          formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+        }
+        return;
+      }
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setValues({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const copyEmail = async () => {
@@ -75,7 +114,6 @@ export function Contact() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Clipboard permission denied: the address is visible and is a mailto link anyway.
     }
   };
 
@@ -157,6 +195,7 @@ export function Contact() {
                         aria-invalid={Boolean(errors.name)}
                         aria-describedby={errors.name ? "contact-name-error" : undefined}
                         className={fieldClass}
+                        maxLength={80}
                       />
                       {errors.name && (
                         <p id="contact-name-error" className="mt-2 text-xs text-red-300">
@@ -184,6 +223,7 @@ export function Contact() {
                         aria-invalid={Boolean(errors.email)}
                         aria-describedby={errors.email ? "contact-email-error" : undefined}
                         className={fieldClass}
+                        maxLength={254}
                       />
                       {errors.email && (
                         <p id="contact-email-error" className="mt-2 text-xs text-red-300">
@@ -209,6 +249,7 @@ export function Contact() {
                         aria-invalid={Boolean(errors.message)}
                         aria-describedby={errors.message ? "contact-message-error" : undefined}
                         className={`${fieldClass} resize-none`}
+                        maxLength={5000}
                       />
                       {errors.message && (
                         <p id="contact-message-error" className="mt-2 text-xs text-red-300">
