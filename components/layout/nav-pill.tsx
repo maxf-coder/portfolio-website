@@ -1,12 +1,16 @@
 "use client";
 
 import { m } from "motion/react";
-import { useTranslations } from "next-intl";
 import { SECTION_IDS, type SectionId } from "@/lib/sections";
 import { navIndicator } from "@/lib/motion";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 
 export function NavPill({ activeSection }: { activeSection: SectionId }) {
   const t = useTranslations("Navigation");
+  const locale = useLocale();
+  const pathname = usePathname();
 
   return (
     <nav
@@ -15,11 +19,12 @@ export function NavPill({ activeSection }: { activeSection: SectionId }) {
     >
       {SECTION_IDS.map((id) => {
         const isActive = id === activeSection;
+        const href = pathname === "/" ? `#${id}` : `/${locale}/#${id}`;
 
         return (
-          <a
+          <Link
             key={id}
-            href={`#${id}`}
+            href={href}
             aria-current={isActive ? "location" : undefined}
             className={`focus-ring relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
               isActive ? "text-cream" : "text-cream/50 hover:text-cream"
@@ -33,7 +38,7 @@ export function NavPill({ activeSection }: { activeSection: SectionId }) {
               />
             )}
             <span className="relative">{t(id)}</span>
-          </a>
+          </Link>
         );
       })}
     </nav>
