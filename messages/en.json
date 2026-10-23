@@ -162,5 +162,13 @@
       "whatsapp": "WhatsApp",
       "telegram": "Telegram"
     }
+  },
+  "Footer": {
+    "tagline": "Building fast, reliable web products.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "language": "Language",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 Maxim Furculiță. All rights reserved."
   }
 }

@@ -162,5 +162,13 @@
       "whatsapp": "WhatsApp",
       "telegram": "Telegram"
     }
+  },
+  "Footer": {
+    "tagline": "Construiesc produse web rapide și fiabile.",
+    "navigation": "Navigare",
+    "contact": "Contact",
+    "language": "Limbă",
+    "privacy": "Politica de confidențialitate",
+    "copyright": "© 2026 Maxim Furculiță. Toate drepturile rezervate."
   }
 }

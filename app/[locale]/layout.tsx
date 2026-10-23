@@ -20,10 +20,31 @@ export function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata");
+  const locale = await getLocale();
 
   return {
-    title: t("title"),
+    metadataBase: new URL("https://maximf.com"),
+    title: {
+      default: t("title"),
+      template: "%s | Maxim Furculiță",
+    },
     description: t("description"),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        en: "/en",
+        ro: "/ro",
+        "x-default": "/en",
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: `/${locale}`,
+      siteName: "Maxim Furculiță",
+      locale: locale === "ro" ? "ro_RO" : "en_US",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 
