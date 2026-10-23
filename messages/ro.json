@@ -170,5 +170,50 @@
     "language": "Limbă",
     "privacy": "Politica de confidențialitate",
     "copyright": "© 2026 Maxim Furculiță. Toate drepturile rezervate."
+  },
+  "Privacy": {
+    "title": "Politica de confidențialitate",
+    "description": "Cum sunt colectate, folosite și păstrate datele pe care le trimiți prin acest site.",
+    "subtitle": "Ce colectez, de ce și cât timp păstrez.",
+    "updated": "Ultima actualizare: 23 octombrie 2026",
+    "back": "Înapoi la pagina principală",
+    "sections": {
+      "who": {
+        "title": "Cine sunt",
+        "body": "Acest site este administrat de Maxim Furculiță, dezvoltator independent cu rezidența în România. Pentru orice aspect legat de această politică sau de datele tale, scrie-mi la adresa de mai jos."
+      },
+      "data": {
+        "title": "Ce date colectez",
+        "body": "Când folosești formularul de contact primesc numele, adresa ta de email și mesajul tău. Nimic altceva — nu se salvează adresa IP și nu este nevoie de cont.\n\nCând îmi scrii direct pe email, primesc ce alegi să îmi scrii și adresa ta de email.\n\nCloudflare Web Analytics înregistrează informații agregate și anonime: vizualizări de pagină, site-ul de unde ai venit, țara și tipul de dispozitiv. Nu folosește cookie-uri și nu creează un profil al tău."
+      },
+      "why": {
+        "title": "De ce și pe ce bază legală",
+        "body": "Ca să îți răspund la mesaj — măsuri luate înaintea unui posibil contract și interesul meu legitim de a răspunde.\n\nCa să înțeleg ce pagini sunt citite — interesul meu legitim de a îmbunătăți site-ul.\n\nNu îți folosesc datele pentru publicitate sau profilare."
+      },
+      "retention": {
+        "title": "Cât timp le păstrez",
+        "body": "Mesajele din formular se șterg după 12 luni, cu excepția cazului în care începem o colaborare. Atunci sunt păstrate pe durata colaborării și pentru perioadele cerute de lege."
+      },
+      "processors": {
+        "title": "Cine le procesează",
+        "body": "Resend livrează emailul, Vercel găzduiește site-ul, iar Cloudflare asigură DNS-ul și analiza traficului. Aceștia procesează datele în numele meu, pe baza acordurilor lor standard de prelucrare, care includ clauzele contractuale standard ale Comisiei Europene pentru transferurile în afara UE. Toți trei au sediul în Statele Unite."
+      },
+      "rights": {
+        "title": "Drepturile tale",
+        "body": "Poți cere o copie a datelor tale, rectificarea sau ștergerea lor, ori te poți opune prelucrării. Scrie-mi la adresa de mai sus și răspund în termen de o lună.\n\nDacă nu ești mulțumit, poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal, ANSPDCP — dataprotection.ro."
+      },
+      "cookies": {
+        "title": "Cookie-uri",
+        "body": "Acest site nu setează niciun cookie. Limba se află în adresă (/en sau /ro), nu într-un cookie, iar Cloudflare Web Analytics nu folosește cookie-uri.\n\nPreferința ta de fundal (aurora sau particule) este salvată în memoria locală a browserului. Nu părăsește niciodată dispozitivul tău."
+      },
+      "sharing": {
+        "title": "Partajare",
+        "body": "Nu îți vând datele și nu le partajez pentru publicitate. Ajung doar la furnizorii de mai sus și, dacă legea o cere, la autorități."
+      },
+      "changes": {
+        "title": "Modificări",
+        "body": "Dacă această politică se schimbă, se schimbă și data de la început. Modificările importante vor fi anunțate pe această pagină."
+      }
+    }
   }
 }
