@@ -25,9 +25,8 @@ export function BackgroundCanvas({ variant }: { variant: "aurora" | "particles" 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const tooSmall = window.matchMedia("(max-width: 767px)").matches;
     const wantsLessMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (tooSmall || wantsLessMotion) return;
+    if (wantsLessMotion) return;
 
     const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
 
