@@ -94,7 +94,7 @@ Key files:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/portfolio.git
+git clone https://github.com/maxf-coder/portfolio-website.git
 cd portfolio
 
 # 2. Install dependencies
