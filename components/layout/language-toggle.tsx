@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useScrolled } from "@/hooks/use-scrolled";
 import { beginLocaleSwitch } from "@/lib/locale-switch";
+import { setLocaleCookie } from "@/lib/locale-cookie";
 import { navIndicator } from "@/lib/motion";
 
 const LOCALES = ["ro", "en"] as const;
@@ -53,6 +54,7 @@ export function LanguageToggle({ layoutId = "locale-active" }: { layoutId?: stri
       // Private mode without storage: the switch still works, it may scroll.
     }
 
+    setLocaleCookie(next);
     router.replace(pathname || "/", { locale: next, scroll: false });
   };
 

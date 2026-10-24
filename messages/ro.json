@@ -204,7 +204,7 @@
       },
       "cookies": {
         "title": "Cookie-uri",
-        "body": "Acest site nu setează niciun cookie. Limba se află în adresă (/en sau /ro), nu într-un cookie, iar Cloudflare Web Analytics nu folosește cookie-uri.\n\nPreferința ta de fundal (aurora sau particule) este salvată în memoria locală a browserului. Nu părăsește niciodată dispozitivul tău."
+        "body": "Acest site setează un singur cookie funcțional pentru a-ți aminti limba aleasă (en sau ro). Nu conține date personale și nu te poate identifica. Nu setăm cookie-uri de publicitate sau de urmărire, iar analiza (Cloudflare Web Analytics) nu folosește cookie-uri."
       },
       "sharing": {
         "title": "Partajare",

@@ -204,7 +204,7 @@
       },
       "cookies": {
         "title": "Cookies",
-        "body": "This site sets no cookies. The language is in the address (/en or /ro), not in a cookie, and Cloudflare Web Analytics is cookieless.\n\nYour background choice (aurora or particles) is stored in your browser's local storage. It never leaves your device."
+        "body": "This site sets one functional cookie to remember your language choice (en or ro). It contains no personal data and cannot identify you. No advertising or tracking cookies are set, and analytics (Cloudflare Web Analytics) is cookieless."
       },
       "sharing": {
         "title": "Sharing",
