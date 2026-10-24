@@ -336,7 +336,7 @@ export function Contact() {
                 <FiArrowUpRight
                   size={16}
                   aria-hidden="true"
-                  className="text-cream/40 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cream"
+                  className="text-cream/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cream"
                 />
               </a>
             ))}

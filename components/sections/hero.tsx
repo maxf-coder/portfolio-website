@@ -2,7 +2,7 @@
 
 import { m } from "motion/react";
 import { useTranslations } from "next-intl";
-import { fadeUpHero, heroItem, staggerHero } from "@/lib/motion";
+import { fadeUpHero, heroItem, heroLcp, riseUpHero, staggerHero } from "@/lib/motion";
 import { ScrollHint } from "@/components/ui/scroll-hint";
 
 export function Hero() {
@@ -17,8 +17,8 @@ export function Hero() {
         animate="visible"
       >
         <m.h1
-          variants={fadeUpHero}
-          transition={heroItem}
+          variants={riseUpHero}
+          transition={heroLcp}
           className="gradient-text mb-4 pb-1 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl"
         >
           {t("name")}

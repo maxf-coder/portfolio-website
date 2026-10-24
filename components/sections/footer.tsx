@@ -19,7 +19,7 @@ const CONTACT_LINKS = [
   },
 ] as const;
 
-const headingClass = "mb-4 text-xs uppercase tracking-wider text-cream/40";
+const headingClass = "mb-4 text-xs uppercase tracking-wider text-cream/70";
 const linkClass =
   "focus-ring inline-flex items-center gap-2 rounded text-sm text-cream/60 transition-colors duration-300 hover:text-cream";
 
@@ -86,7 +86,7 @@ export async function Footer() {
         </div>
       </div>
 
-      <p className="mx-auto mt-12 max-w-6xl border-t border-cream/10 pt-8 text-center text-sm text-cream/40">
+      <p className="mx-auto mt-12 max-w-6xl border-t border-cream/10 pt-8 text-center text-sm text-cream/70">
         {t("copyright")}
       </p>
     </footer>

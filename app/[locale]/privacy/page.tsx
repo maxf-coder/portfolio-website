@@ -57,7 +57,7 @@ export default async function PrivacyPage() {
 
         <h1 className="gradient-text mb-3 text-3xl font-bold sm:text-4xl">{t("title")}</h1>
         <p className="text-lg text-cream/70">{t("subtitle")}</p>
-        <p className="mb-12 mt-2 text-sm text-cream/40">{t("updated")}</p>
+        <p className="mb-12 mt-2 text-sm text-cream/70">{t("updated")}</p>
 
         <div className="glass space-y-10 rounded-3xl p-6 sm:p-10">
           {SECTION_IDS.map((id) => (

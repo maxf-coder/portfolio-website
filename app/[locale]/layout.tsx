@@ -32,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: t("description"),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: new URL(`/${locale}`, SITE_URL),
       languages: {
-        en: "/en",
-        ro: "/ro",
-        "x-default": "/en",
+        en: `${SITE_URL}/en`,
+        ro: `${SITE_URL}/ro`,
+        "x-default": `${SITE_URL}/en`,
       },
     },
     openGraph: {
