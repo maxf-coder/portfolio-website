@@ -32,7 +32,7 @@
 - **Project showcase** - modal-based project viewer with tech icons, brand-colored chips and lazy-loaded covers (screenshots rendered with `unoptimized` images as a deliberate trade-off).
 - **Contact form** - client-side validation (per-field errors), in-memory rate limiting (5 requests / 10 minutes / IP), size caps, and server-side delivery through Resend. No honeypot, no silent drops.
 - **Privacy-first analytics** - Cloudflare Web Analytics is cookieless and aggregated; no visitor is ever identified.
-- **Complete SEO kit** - `sitemap.xml`, `robots.txt`, web manifest, SVG + PNG + maskable icons, Open Graph image, canonical and `hreflang` metadata on every page.
+- **Complete SEO kit** - `sitemap.xml`, `robots.txt`, web manifest, SVG + PNG + maskable icons, Open Graph image, canonical and `hreflang` metadata on every page, plus Person and WebSite structured data with the diacritic name variants as `alternateName`.
 - **Accessibility** - WCAG-contrast-safe palette, focus rings, `aria-*` labels, keyboard-reachable controls, and reduced-motion support.
 - **Smooth language switching** - scroll position is preserved and entrance animations are skipped for 1 second so switching never feels laggy.
 
@@ -78,7 +78,8 @@ Key files:
 
 - `proxy.ts` - redirects `/` to the visitor's stored locale (`NEXT_LOCALE` cookie), otherwise hands off to next-intl.
 - `lib/motion.ts` - central animation tokens (durations, eases, stagger variants).
-- `lib/site.ts` - single source of truth for domain and site name.
+- `lib/site.ts` - single source of truth for domain, site name and name variants.
+- `lib/structured-data.ts` - Person + WebSite JSON-LD with `alternateName` for the diacritic spellings.
 - `components/providers/analytics.tsx` - Cloudflare beacon (no-ops without a token).
 
 ---

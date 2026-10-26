@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { NextIntlClientProvider } from "next-intl";
 import { Analytics } from "@/components/providers/analytics";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { structuredData } from "@/lib/structured-data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,6 +58,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   return (
     <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData(locale)).replace(/</g, "\\u003c"),
+          }}
+        />
         <NextIntlClientProvider>
           <BackgroundProvider>
             <MotionProvider>
