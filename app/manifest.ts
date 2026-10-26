@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
+import { SITE_NAME } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Maxim Furculiță - Backend & Full-stack Developer",
+    name: `${SITE_NAME} - Backend & Full-stack Developer`,
     short_name: "Maxim F.",
-    description:
-      "Portfolio of Maxim Furculiță, a backend and full-stack developer.",
+    description: `Portfolio of ${SITE_NAME}, a backend and full-stack developer.`,
     start_url: "/",
     display: "standalone",
     background_color: "#050a1f",

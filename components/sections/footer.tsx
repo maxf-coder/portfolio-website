@@ -6,6 +6,7 @@ import { Logo } from "@/components/layout/logo";
 import { LanguageToggle } from "@/components/layout/language-toggle";
 import { Link } from "@/i18n/navigation";
 import { SECTION_IDS } from "@/lib/sections";
+import { SITE_NAME } from "@/lib/site";
 
 const NAV_IDS = SECTION_IDS.filter((id) => id !== "home");
 
@@ -33,7 +34,7 @@ export async function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Logo size={40} />
-            <span className="text-lg font-bold text-cream">Maxim Furculiță</span>
+            <span className="text-lg font-bold text-cream">{SITE_NAME}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/60">{t("tagline")}</p>
         </div>

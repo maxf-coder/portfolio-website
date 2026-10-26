@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "@/i18n/navigation";
+import { SITE_NAME } from "@/lib/site";
 
 const SECTION_IDS = [
   "who",
@@ -33,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: `/${locale}/privacy`,
-      siteName: "Maxim Furculiță",
+      siteName: SITE_NAME,
       locale: locale === "ro" ? "ro_RO" : "en_US",
       title: t("title"),
       description: t("description"),

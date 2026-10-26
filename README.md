@@ -1,6 +1,6 @@
-# Maxim Furculiță — Portfolio
+# Maxim Furculita - Portfolio
 
-**Backend & Full-stack Developer.** Bilingual portfolio built with Next.js, React and TypeScript, focused on performance, accessibility and privacy — no cookies, cookieless analytics, and an animated canvas background that respects `prefers-reduced-motion`.
+**Backend & Full-stack Developer.** Bilingual portfolio built with Next.js, React and TypeScript, focused on performance, accessibility and privacy - one functional cookie for the language choice, cookieless analytics, and an animated canvas background that respects `prefers-reduced-motion`.
 
 > This is a **personal portfolio**. It represents the author's own skills, projects and opinions. It is not affiliated with, endorsed by, or sponsored by any of the tools, companies, or technologies mentioned.
 >
@@ -17,24 +17,24 @@
 | Language | [TypeScript](https://www.typescriptlang.org) | 5.x | Type safety end to end |
 | Styling | [Tailwind CSS](https://tailwindcss.com) | 4.x | Utility-first design tokens |
 | Animation | [Motion](https://motion.dev) | 14.x | Declarative, GPU-friendly transitions |
-| i18n | [next-intl](https://next-intl.dev) | 4.14.9 | Locale routing, messages, no cookies |
+| i18n | [next-intl](https://next-intl.dev) | 4.14.9 | Locale routing and messages |
 | Icons | [react-icons](https://react-icons.github.io/react-icons) | 5.7.x | Lightweight icon set |
-| Email | [Resend](https://resend.com) | — | Contact form delivery (API) |
-| Analytics | [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics) | — | Cookieless, privacy-friendly |
-| Image processing | [sharp](https://sharp.pixelplumbing.com) | — | Offline icon/canvas generation |
+| Email | [Resend](https://resend.com) | - | Contact form delivery (API) |
+| Analytics | [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics) | - | Cookieless, privacy-friendly |
+| Image processing | [sharp](https://sharp.pixelplumbing.com) | - | Offline icon/canvas generation |
 
 ---
 
 ## Features
 
-- **Full i18n** — `/en` and `/ro` routes, `x-default` → English, `hreflang` alternates in HTML and `sitemap.xml`. The locale lives in the URL, so **no cookie is set** and no consent banner is needed.
-- **Two animated backgrounds** — aurora and particle systems rendered on a `<canvas>` with device-pixel-ratio clamping and an automatic static fallback under `prefers-reduced-motion`. Clicking the logo toggles between them.
-- **Project showcase** — modal-based project viewer with tech icons, brand-colored chips and lazy-loaded covers (screenshots rendered with `unoptimized` images as a deliberate trade-off).
-- **Contact form** — client-side validation (per-field errors), in-memory rate limiting (5 requests / 10 minutes / IP), size caps, and server-side delivery through Resend. No honeypot, no silent drops.
-- **Privacy-first analytics** — Cloudflare Web Analytics is cookieless and aggregated; no visitor is ever identified.
-- **Complete SEO kit** — `sitemap.xml`, `robots.txt`, web manifest, SVG + PNG + maskable icons, Open Graph image, canonical and `hreflang` metadata on every page.
-- **Accessibility** — WCAG-contrast-safe palette, focus rings, `aria-*` labels, keyboard-reachable controls, and reduced-motion support.
-- **Smooth language switching** — scroll position is preserved and entrance animations are skipped for 1 second so switching never feels laggy.
+- **Full i18n** - `/en` and `/ro` routes, `x-default` → English, `hreflang` alternates in HTML and `sitemap.xml`. The locale lives in the URL, and a single functional cookie remembers the language you pick, so no consent banner is needed.
+- **Two animated backgrounds** - aurora and particle systems rendered on a `<canvas>` with device-pixel-ratio clamping and an automatic static fallback under `prefers-reduced-motion`. Clicking the logo toggles between them.
+- **Project showcase** - modal-based project viewer with tech icons, brand-colored chips and lazy-loaded covers (screenshots rendered with `unoptimized` images as a deliberate trade-off).
+- **Contact form** - client-side validation (per-field errors), in-memory rate limiting (5 requests / 10 minutes / IP), size caps, and server-side delivery through Resend. No honeypot, no silent drops.
+- **Privacy-first analytics** - Cloudflare Web Analytics is cookieless and aggregated; no visitor is ever identified.
+- **Complete SEO kit** - `sitemap.xml`, `robots.txt`, web manifest, SVG + PNG + maskable icons, Open Graph image, canonical and `hreflang` metadata on every page.
+- **Accessibility** - WCAG-contrast-safe palette, focus rings, `aria-*` labels, keyboard-reachable controls, and reduced-motion support.
+- **Smooth language switching** - scroll position is preserved and entrance animations are skipped for 1 second so switching never feels laggy.
 
 ---
 
@@ -76,10 +76,10 @@
 
 Key files:
 
-- `proxy.ts` — redirects `/` to the visitor's stored locale (`NEXT_LOCALE` cookie), otherwise hands off to next-intl.
-- `lib/motion.ts` — central animation tokens (durations, eases, stagger variants).
-- `lib/site.ts` — single source of truth for domain and site name.
-- `components/providers/analytics.tsx` — Cloudflare beacon (no-ops without a token).
+- `proxy.ts` - redirects `/` to the visitor's stored locale (`NEXT_LOCALE` cookie), otherwise hands off to next-intl.
+- `lib/motion.ts` - central animation tokens (durations, eases, stagger variants).
+- `lib/site.ts` - single source of truth for domain and site name.
+- `components/providers/analytics.tsx` - Cloudflare beacon (no-ops without a token).
 
 ---
 
@@ -119,7 +119,7 @@ Open [http://localhost:3000](http://localhost:3000). The locale redirects: `/` p
 | `CONTACT_FROM` | Yes* | Sender identity shown to the recipient. |
 | `NEXT_PUBLIC_CF_BEACON_TOKEN` | No | Cloudflare Web Analytics beacon token. The component stays inert without it. |
 
-\* The site runs without the contact variables — the form simply returns a server error instead of sending.
+\* The site runs without the contact variables - the form simply returns a server error instead of sending.
 
 Note that `NEXT_PUBLIC_*` values are inlined at build time: after changing `.env.local`, restart the dev server (or rebuild for production).
 
@@ -141,7 +141,7 @@ Note that `NEXT_PUBLIC_*` values are inlined at build time: after changing `.env
 
 The site is designed for [Vercel](https://vercel.com):
 
-1. Push the repository to GitHub and import it in Vercel (framework preset: **Next.js** — auto-detected).
+1. Push the repository to GitHub and import it in Vercel (framework preset: **Next.js** - auto-detected).
 2. Add the same environment variables in *Project → Settings → Environment Variables*.
 3. Connect your domain (`maximf.com`) and point the DNS record at Vercel.
 4. Deploy. Build logs will confirm linting, type-checking and cache-components.
@@ -156,15 +156,15 @@ After the first deploy:
 
 ## Technical Notes
 
-- **Locale and state** — changing the language remounts the `[locale]` tree (the route segment). To keep the experience seamless, scroll position is persisted in `sessionStorage` and restored on mount, and Motion's global `skipAnimations` is enabled for 1 second during the switch so entrances don't replay.
-- **Analytics honesty** — the analytics beacon sends aggregated, anonymous metrics only; no IPs are stored by Cloudflare and no cookies are used. The privacy policy (in `/privacy`) reflects exactly this.
-- **Animation budget** — the hero title is intentionally not opacity-animated (it slides) so the Largest Contentful Paint stays close to First Contentful Paint, while secondary content still staggers in.
-- **Images** — project covers are served `unoptimized` per design choice and resized with `sharp` (600px wide) to keep the bundle light.
+- **Locale and state** - changing the language remounts the `[locale]` tree (the route segment). To keep the experience seamless, scroll position is persisted in `sessionStorage` and restored on mount, and Motion's global `skipAnimations` is enabled for 1 second during the switch so entrances don't replay.
+- **Analytics honesty** - the analytics beacon sends aggregated, anonymous metrics only; no IPs are stored by Cloudflare and analytics uses no cookies. The only cookie is the language preference. The privacy policy (in `/privacy`) reflects exactly this.
+- **Animation budget** - the hero title is intentionally not opacity-animated (it slides) so the Largest Contentful Paint stays close to First Contentful Paint, while secondary content still staggers in.
+- **Images** - project covers are served `unoptimized` per design choice and resized with `sharp` (600px wide) to keep the bundle light.
 
 ---
 
 ## License
 
-© 2026 Maxim Furculiță — All rights reserved.
+© 2026 Maxim Furculita - All rights reserved.
 
 This repository is a personal portfolio. Reuse the code as a reference; if you build on it visibly, link back to the original.

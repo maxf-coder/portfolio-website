@@ -157,7 +157,7 @@ export function ProjectDetail({ project, returnFocusTo, onClose }: ProjectDetail
                 <Image
                   key={image.src}
                   src={image.src}
-                  alt={`${title} — screenshot ${index + 1}`}
+                  alt={`${title} - screenshot ${index + 1}`}
                   width={image.width}
                   height={image.height}
                   unoptimized

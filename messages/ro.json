@@ -1,10 +1,10 @@
 {
   "Metadata": {
-    "title": "Maxim Furculiță – Dezvoltator Backend & Full-stack",
-    "description": "Portofoliul lui Maxim Furculiță, dezvoltator freelancer backend și full-stack care construiește aplicații web, API-uri și automatizări."
+    "title": "Maxim Furculita - Dezvoltator Backend & Full-stack",
+    "description": "Portofoliul lui Maxim Furculita, dezvoltator freelancer backend și full-stack care construiește aplicații web, API-uri și automatizări."
   },
   "Hero": {
-    "name": "Maxim Furculiță",
+    "name": "Maxim Furculita",
     "role": "Dezvoltator Backend & Full-stack",
     "cta": "Hai să construim proiectul tău",
     "scroll": "Vezi serviciile"
@@ -169,7 +169,7 @@
     "contact": "Contact",
     "language": "Limbă",
     "privacy": "Politica de confidențialitate",
-    "copyright": "© 2026 Maxim Furculiță. Toate drepturile rezervate."
+    "copyright": "© 2026 Maxim Furculita. Toate drepturile rezervate."
   },
   "Privacy": {
     "title": "Politica de confidențialitate",
@@ -180,15 +180,15 @@
     "sections": {
       "who": {
         "title": "Cine sunt",
-        "body": "Acest site este administrat de Maxim Furculiță, dezvoltator independent cu rezidența în România. Pentru orice aspect legat de această politică sau de datele tale, scrie-mi la adresa de mai jos."
+        "body": "Acest site este administrat de Maxim Furculita, dezvoltator independent cu rezidența în România. Pentru orice aspect legat de această politică sau de datele tale, scrie-mi la adresa de mai jos."
       },
       "data": {
         "title": "Ce date colectez",
-        "body": "Când folosești formularul de contact primesc numele, adresa ta de email și mesajul tău. Nimic altceva — nu se salvează adresa IP și nu este nevoie de cont.\n\nCând îmi scrii direct pe email, primesc ce alegi să îmi scrii și adresa ta de email.\n\nCloudflare Web Analytics înregistrează informații agregate și anonime: vizualizări de pagină, site-ul de unde ai venit, țara și tipul de dispozitiv. Nu folosește cookie-uri și nu creează un profil al tău."
+        "body": "Când folosești formularul de contact primesc numele, adresa ta de email și mesajul tău. Nimic altceva - nu se salvează adresa IP și nu este nevoie de cont.\n\nCând îmi scrii direct pe email, primesc ce alegi să îmi scrii și adresa ta de email.\n\nCloudflare Web Analytics înregistrează informații agregate și anonime: vizualizări de pagină, site-ul de unde ai venit, țara și tipul de dispozitiv. Nu folosește cookie-uri și nu creează un profil al tău."
       },
       "why": {
         "title": "De ce și pe ce bază legală",
-        "body": "Ca să îți răspund la mesaj — măsuri luate înaintea unui posibil contract și interesul meu legitim de a răspunde.\n\nCa să înțeleg ce pagini sunt citite — interesul meu legitim de a îmbunătăți site-ul.\n\nNu îți folosesc datele pentru publicitate sau profilare."
+        "body": "Ca să îți răspund la mesaj - măsuri luate înaintea unui posibil contract și interesul meu legitim de a răspunde.\n\nCa să înțeleg ce pagini sunt citite - interesul meu legitim de a îmbunătăți site-ul.\n\nNu îți folosesc datele pentru publicitate sau profilare."
       },
       "retention": {
         "title": "Cât timp le păstrez",
@@ -200,7 +200,7 @@
       },
       "rights": {
         "title": "Drepturile tale",
-        "body": "Poți cere o copie a datelor tale, rectificarea sau ștergerea lor, ori te poți opune prelucrării. Scrie-mi la adresa de mai sus și răspund în termen de o lună.\n\nDacă nu ești mulțumit, poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal, ANSPDCP — dataprotection.ro."
+        "body": "Poți cere o copie a datelor tale, rectificarea sau ștergerea lor, ori te poți opune prelucrării. Scrie-mi la adresa de mai sus și răspund în termen de o lună.\n\nDacă nu ești mulțumit, poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal, ANSPDCP - dataprotection.ro."
       },
       "cookies": {
         "title": "Cookie-uri",
